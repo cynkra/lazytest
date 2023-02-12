@@ -12,8 +12,12 @@ Once all remaining tests have succeeded, the remaining tests are run in a second
 
 ## How does it work?
 
-The testthat package exports a "reporter" interface that allows hooking into how tests are processed.
-This package makes use of this interface and 
+`testthat::test_local()` returns an object from which the tests that have failed can be retrieved.
+`lazytest_local()` wraps this function.
+If tests have failed, a file named `.lazytest` is written in the package directory.
+In the next call, if `.lazytest` exists, it is consulted, and a suitable `filter` argument is constructed and passed to `testthat::test_local()`.
+
+When all tests have passed and not all tests were run, a second call to `testthat::test_local()` is initiated, to make sure that no failures have been introduced in the meantime.
 
 
 ## Installation
@@ -28,16 +32,9 @@ If you're using RStudio, it is a good idea to remap the shortcut for running tes
 The add-in provides two commands:
 
 - Run Lazy Tests in New Terminal (recommended mapping: Ctrl + Shift + T / Cmd + Shift + T)
+
 - Reset And Run Lazy Tests in New Terminal (recommended mapping: Ctrl + T / Cmd + T)
 
 This allows you to keep the workflows you're accustomed to and to benefit immediately.
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(lazytest)
-## basic example code
-```
-
+![RStudio shortcut configuration](https://github.com/krlmlr/lazytest/raw/main/readme/rstudio-kb.png)

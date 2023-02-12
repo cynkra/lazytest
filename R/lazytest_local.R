@@ -32,6 +32,10 @@ lazytest_local <- function(path = ".",
   #   load_package = load_package
   # ))
 
+  if (!identical(path, ".")) {
+    cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.')
+  }
+
   if (!is.null(filter)) {
     cli::cli_abort("{.code lazytest_local()} requires {.code filter = NULL}, use {.code testthat::test_local()} to pass a {.code filter} argument.")
   }
