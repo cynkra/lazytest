@@ -4,15 +4,18 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/r-lib/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/lazytest/actions/workflows/R-CMD-check.yaml) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/lazytest)](https://CRAN.R-project.org/package=lazytest)
+[![R-CMD-check](https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/lazytest)](https://CRAN.R-project.org/package=lazytest)
 
 <!-- badges: end -->
 
-The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the `lazytest_local()` function, a drop-in replacement for [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html), that memoizes the tests that have failed and runs only those tests in subsequent runs. Once all remaining tests have succeeded, the remaining tests are run in a second pass.
+<pre class='chroma'>
+<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/krlmlr/lazytest'>lazytest</a></span><span class='o'>)</span></span></pre>
+
+The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the [`lazytest_local()`](https://krlmlr.github.io/lazytest/reference/lazytest_local.html) function, a drop-in replacement for [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html), that memoizes the tests that have failed and runs only those tests in subsequent runs. Once all remaining tests have succeeded, the remaining tests are run in a second pass.
 
 ## How does it work?
 
-[`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html) returns an object from which the tests that have failed can be retrieved. `lazytest_local()` wraps this function. If tests have failed, a file named `.lazytest` is written in the package directory. In the next call, if `.lazytest` exists, it is consulted, and a suitable `filter` argument is constructed and passed to [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html).
+[`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html) returns an object from which the tests that have failed can be retrieved. [`lazytest_local()`](https://krlmlr.github.io/lazytest/reference/lazytest_local.html) wraps this function. If tests have failed, a file named `.lazytest` is written in the package directory. In the next call, if `.lazytest` exists, it is consulted, and a suitable `filter` argument is constructed and passed to [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html).
 
 When all tests have passed and not all tests were run, a second call to [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html) is initiated, to make sure that no failures have been introduced in the meantime.
 
