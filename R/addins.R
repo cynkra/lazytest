@@ -3,9 +3,19 @@ run_tests <- function() {
 }
 
 run_lazytests <- function() {
-  rstudioapi::terminalExecute("R -q -e 'lazytest::lazytest_local()'")
+  cmd <- paste0(
+    "R -q -e '",
+    # 'pkgload::load_all("~/git/R/lazytest"); ',
+    "lazytest::lazytest_local()'"
+  )
+  rstudioapi::terminalExecute(cmd)
 }
 
 run_lazytests_reset <- function() {
-  rstudioapi::terminalExecute("R -q -e 'lazytest::lazytest_local(lazytest_reset = TRUE)'")
+  cmd <- paste0(
+    "R -q -e '",
+    # 'pkgload::load_all("~/git/R/lazytest"); ',
+    "lazytest::lazytest_local(lazytest_reset = TRUE)'"
+  )
+  rstudioapi::terminalExecute(cmd)
 }
