@@ -7,8 +7,8 @@ Authors@R:
            comment = c(ORCID = "0000-0002-1416-3412"))
 Description: What the package does (one paragraph).
 License: GPL-3
-URL: https://github.com/krlmlr/happy, https://krlmlr.github.io/happy
-BugReports: https://github.com/krlmlr/happy/issues
+URL: https://github.com/krlmlr/lazytest, https://krlmlr.github.io/lazytest
+BugReports: https://github.com/krlmlr/lazytest/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

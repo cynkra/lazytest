@@ -35,7 +35,7 @@ lazytest_local <- function(path = ".",
     cli::cli_abort("{.code lazytest_local()} requires {.code filter = NULL}, use {.code testthat::test_local()} to pass a {.code filter} argument.")
   }
 
-  CONTEXT_FILE_NAME <- ".happy"
+  CONTEXT_FILE_NAME <- ".lazytest"
 
   has_context <- fs::file_exists(CONTEXT_FILE_NAME)
   if (has_context) {

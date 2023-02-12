@@ -6,11 +6,11 @@ Binding: run_tests
 Interactive: false
 
 Name: Run Lazy Tests in New Terminal
-Description: Opens a new terminal to run the tests with happy::lazytest_local() in.
+Description: Opens a new terminal to run the tests with lazytest::lazytest_local() in.
 Binding: run_lazytests
 Interactive: false
 
 Name: Reset And Run Lazy Tests in New Terminal
-Description: Opens a new terminal to run the tests with happy::lazytest_local(lazytest_reset = TRUE) in.
+Description: Opens a new terminal to run the tests with lazytest::lazytest_local(lazytest_reset = TRUE) in.
 Binding: run_lazytests_reset
 Interactive: false
