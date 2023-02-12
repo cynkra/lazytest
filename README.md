@@ -32,3 +32,9 @@ If you’re using RStudio, it is a good idea to remap the shortcut for running t
 This allows you to keep the workflows you’re accustomed to and to benefit immediately.
 
 ![RStudio shortcut configuration](https://github.com/krlmlr/lazytest/raw/main/readme/rstudio-kb.png)
+
+------------------------------------------------------------------------
+
+## Code of Conduct
+
+Please note that the lazytest project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
