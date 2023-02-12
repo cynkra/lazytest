@@ -3,9 +3,9 @@ run_tests <- function() {
 }
 
 run_lazytests <- function() {
-  rstudioapi::terminalExecute("R -q -e 'happy::lazytest_local()'")
+  rstudioapi::terminalExecute("R -q -e 'lazytest::lazytest_local()'")
 }
 
 run_lazytests_reset <- function() {
-  rstudioapi::terminalExecute("R -q -e 'happy::lazytest_local(lazytest_reset = TRUE)'")
+  rstudioapi::terminalExecute("R -q -e 'lazytest::lazytest_local(lazytest_reset = TRUE)'")
 }
