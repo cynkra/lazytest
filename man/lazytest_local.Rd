@@ -29,6 +29,11 @@ See \link[testthat]{Reporter} for more details and a list of built-in reporters.
 \item{lazytest_reset}{Set to \code{TRUE} to run all tests, regardless of what the
 last test results were.}
 
+\item{stop_on_failure}{If \code{TRUE}, throw an error if any tests fail.}
+
+\item{stop_on_warning}{If \code{TRUE}, throw an error if any tests generate
+warnings.}
+
 \item{filter}{Must be \code{NULL}.}
 
 \item{load_package}{Strategy to use for load package code:

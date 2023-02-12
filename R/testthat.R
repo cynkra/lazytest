@@ -171,3 +171,16 @@ context_name <- function(filename) {
   filename <- sub("[.][Rr]$", "", filename)
   filename
 }
+
+expectation_type <- function(exp) {
+  stopifnot(is.expectation(exp))
+  gsub("^expectation_", "", class(exp)[[1]])
+}
+
+expectation_success <- function(exp) expectation_type(exp) == "success"
+expectation_failure <- function(exp) expectation_type(exp) == "failure"
+expectation_error   <- function(exp) expectation_type(exp) == "error"
+expectation_skip    <- function(exp) expectation_type(exp) == "skip"
+expectation_warning <- function(exp) expectation_type(exp) == "warning"
+expectation_broken  <- function(exp) expectation_failure(exp) || expectation_error(exp)
+expectation_ok      <- function(exp) expectation_type(exp) %in% c("success", "warning")

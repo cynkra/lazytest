@@ -4,6 +4,7 @@
 #' only the tests that failed last time.
 #'
 #' @inheritParams testthat::test_local
+#' @inheritParams testthat::test_dir
 #' @param filter Must be `NULL`.
 #' @param lazytest_reset Set to `TRUE` to run all tests, regardless of what the
 #'   last test results were.
@@ -66,6 +67,7 @@ lazytest_local <- function(path = ".",
 
   orig_reporter <- reporter
 
+  package <- pkgload::pkg_name(path)
   want_parallel <- find_parallel(path, load_package, package)
 
   if (is.null(reporter)) {
