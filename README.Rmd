@@ -32,6 +32,18 @@ It integrates tightly with the testthat package and provides the `lazytest_local
 Once all remaining tests have succeeded, the remaining tests are run in a second pass.
 
 
+## Usage
+
+Call `lazytest_local()` in lieu of `testthat::test_local()` or `devtools::test()`:
+
+```{r, eval = FALSE}
+lazytest::lazytest_local()
+```
+
+The package also provides RStudio add-ins that run the tests in a new terminal.
+Unfortunately, the "Test package" command is hard-wired to `devtools::test()`, and there seems to be no way to customize it or hook into it.
+
+
 ## How does it work?
 
 `testthat::test_local()` returns an object from which the tests that have failed can be retrieved.
