@@ -1,0 +1,14 @@
+Package: lazytest
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Date: 2023-02-12
+Authors@R: 
+    person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1416-3412"))
+Description: What the package does (one paragraph).
+License: GPL-3
+URL: https://github.com/krlmlr/happy, https://krlmlr.github.io/happy
+BugReports: https://github.com/krlmlr/happy/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
