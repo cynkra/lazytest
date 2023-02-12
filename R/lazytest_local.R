@@ -65,24 +65,6 @@ lazytest_local <- function(path = ".",
     )
   }
 
-  orig_reporter <- reporter
-
-  package <- pkgload::pkg_name(path)
-  want_parallel <- find_parallel(path, load_package, package)
-
-  if (is.null(reporter)) {
-    if (want_parallel) {
-      reporter <- default_parallel_reporter()
-    } else {
-      reporter <- default_reporter()
-    }
-  }
-  reporters <- find_reporter_list(reporter)
-
-  my_list_reporter <- ListReporter$new()
-
-  reporter <- MultiReporter$new(c(reporters, list(my_list_reporter)))
-
   out <- test_local(
     path,
     reporter,
@@ -93,7 +75,7 @@ lazytest_local <- function(path = ".",
     load_package = load_package
   )
 
-  result_df <- as.data.frame.testthat_results(my_list_reporter$get_results())
+  result_df <- as.data.frame.testthat_results(out)
 
   passed_idx <- result_df$failed == 0 & !result_df$error
 
@@ -120,7 +102,7 @@ lazytest_local <- function(path = ".",
 
     return(lazytest_local(
       path,
-      orig_reporter,
+      reporter,
       ...,
       stop_on_failure = FALSE,
       stop_on_warning = FALSE,
@@ -139,5 +121,5 @@ lazytest_local <- function(path = ".",
     stop_on_warning = stop_on_warning
   )
 
-  invisible(my_list_reporter$get_results())
+  invisible(out)
 }

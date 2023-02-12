@@ -14,9 +14,7 @@ BugReports: https://github.com/krlmlr/lazytest/issues
 Imports: 
     brio,
     cli,
-    desc,
     fs,
-    pkgload,
     rex,
     rlang,
     testthat
