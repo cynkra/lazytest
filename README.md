@@ -11,7 +11,7 @@
 <pre class='chroma'>
 <span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/krlmlr/lazytest'>lazytest</a></span><span class='o'>)</span></span></pre>
 
-The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the [`lazytest_local()`](https://krlmlr.github.io/lazytest/reference/lazytest_local.html) function, a drop-in replacement for [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html), that memoizes the tests that have failed and runs only those tests in subsequent runs. Once all remaining tests have succeeded, the remaining tests are run in a second pass.
+The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the [`lazytest_local()`](https://krlmlr.github.io/lazytest/reference/lazytest_local.html) function, a drop-in replacement for [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html), that memoizes the tests that have failed and runs only those tests in subsequent runs. If all active tests have succeeded, the entire test suite is run in a second pass.
 
 ## Usage
 

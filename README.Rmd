@@ -29,7 +29,7 @@ library(lazytest)
 
 The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run.
 It integrates tightly with the testthat package and provides the `lazytest_local()` function, a drop-in replacement for `testthat::test_local()`, that memoizes the tests that have failed and runs only those tests in subsequent runs.
-Once all remaining tests have succeeded, the remaining tests are run in a second pass.
+If all active tests have succeeded, the entire test suite is run in a second pass.
 
 
 ## Usage
