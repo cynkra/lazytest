@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">lazytest</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9002</span>
       </span>
     </div>
 
@@ -73,11 +73,21 @@
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <code><a href="reference/lazytest_local.html">lazytest_local()</a></code> function, a drop-in replacement for <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>, that memoizes the tests that have failed and runs only those tests in subsequent runs. Once all remaining tests have succeeded, the remaining tests are run in a second pass.</p>
+<pre class="chroma">
+<span><span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="https://github.com/krlmlr/lazytest" class="external-link">lazytest</a></span><span class="o">)</span></span></pre>
+<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <a href="https://krlmlr.github.io/lazytest/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> function, a drop-in replacement for <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>, that memoizes the tests that have failed and runs only those tests in subsequent runs. If all active tests have succeeded, the entire test suite is run in a second pass.</p>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<p>Call <a href="https://krlmlr.github.io/lazytest/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> in lieu of <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> or <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>:</p>
+<pre class="chroma">
+<span><span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://krlmlr.github.io/lazytest/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span></pre>
+<p>The package also provides RStudio add-ins that run the tests in a new terminal. Unfortunately, the “Test package” command is hard-wired to <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>, and there seems to be no way to customize it or hook into it.</p>
+</div>
 <div class="section level2">
 <h2 id="how-does-it-work">How does it work?<a class="anchor" aria-label="anchor" href="#how-does-it-work"></a>
 </h2>
-<p><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> returns an object from which the tests that have failed can be retrieved. <code><a href="reference/lazytest_local.html">lazytest_local()</a></code> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>.</p>
+<p><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> returns an object from which the tests that have failed can be retrieved. <a href="https://krlmlr.github.io/lazytest/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>.</p>
 <p>When all tests have passed and not all tests were run, a second call to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> is initiated, to make sure that no failures have been introduced in the meantime.</p>
 </div>
 <div class="section level2">
@@ -140,7 +150,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/krlmlr/lazytest/actions/workflows/rcc.yaml" class="external-link"><img src="https://github.com/krlmlr/lazytest/actions/workflows/rcc.yaml/badge.svg" alt="rcc"></a></li>
+<li><a href="https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://CRAN.R-project.org/package=lazytest" class="external-link"><img src="https://www.r-pkg.org/badges/version/lazytest" alt="CRAN status"></a></li>
 </ul>
@@ -157,7 +167,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
 </div>
 
       </footer>
