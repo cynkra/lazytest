@@ -26,5 +26,9 @@ test_that("lazytest_local() works", {
   })
 
   expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
-  expect_snapshot_file(file.path(pkg_dir, ".lazytest"))
+  # expect_snapshot_file didn't record anything?!
+  expect_equal(
+    readLines(file.path(pkg_dir, ".lazytest")),
+    "test-blip"
+  )
 })
