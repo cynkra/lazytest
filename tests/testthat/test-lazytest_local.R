@@ -13,6 +13,8 @@ test_that("lazytest_local() works", {
 
   lazytest_dir <- here::here()
 
+  # convoluted way to run the tests
+  # without their results being reported for this test file
   withr::with_dir(pkg_dir, {
     process <- callr::r_bg(function(lazytest_dir) {
       pkgload::load_all(lazytest_dir)
@@ -23,5 +25,6 @@ test_that("lazytest_local() works", {
     process$wait()
   })
 
+  expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
   expect_snapshot_file(file.path(pkg_dir, ".lazytest"))
 })
