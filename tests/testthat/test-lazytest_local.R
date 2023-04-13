@@ -29,4 +29,16 @@ test_that("lazytest_local() works", {
     as.data.frame.testthat_results(second_run$get_result())[,1],
     c("test-blip.R")
   )
+
+  # Now fix test!
+  edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
+  new_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
+  expect_equal(
+    as.data.frame.testthat_results(second_run$get_result())[,1],
+    c("test-blip.R")
+  )
+  expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
+
+  run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
+  expect_snapshot(readLines(file.path(pkg_dir, "lazytest-msg")))
 })

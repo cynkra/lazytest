@@ -8,7 +8,8 @@ run_lazytest <- function(pkg_dir, lazytest_dir) {
         testthat_results <- lazytest::lazytest_local(stop_on_failure = FALSE)
         return(testthat_results)
       },
-      args = list(lazytest_dir = lazytest_dir)
+      args = list(lazytest_dir = lazytest_dir),
+      stderr = file.path(pkg_dir, "lazytest-msg") # catching lazytest messages
     )
     process$wait()
   })
