@@ -19,7 +19,14 @@ Imports:
     rlang,
     testthat
 Suggests: 
-    rstudioapi
+    callr,
+    fledge,
+    here,
+    pkgload,
+    rstudioapi,
+    usethis,
+    withr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Config/testthat/edition: 3
