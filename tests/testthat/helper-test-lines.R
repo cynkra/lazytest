@@ -15,7 +15,7 @@ failing_test_lines <- function() {
 }
 
 edit_test <- function(test_name, test_lines, pkg_dir) {
-  writeLines(
+  brio::write_lines(
     test_lines,
     file.path(pkg_dir, "tests", "testthat", sprintf("test-%s.R", test_name))
   )

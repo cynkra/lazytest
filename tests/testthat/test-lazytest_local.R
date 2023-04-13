@@ -19,7 +19,7 @@ test_that("lazytest_local() works", {
   expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
   # expect_snapshot_file didn't record anything?!
   expect_equal(
-    readLines(file.path(pkg_dir, ".lazytest")),
+    brio::lead_lines(file.path(pkg_dir, ".lazytest")),
     "blip"
   )
   expect_equal(
@@ -43,7 +43,7 @@ test_that("lazytest_local() works", {
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
 
   run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
-  expect_snapshot(readLines(file.path(pkg_dir, "lazytest-msg")))
+  expect_snapshot(brio::lead_lines(file.path(pkg_dir, "lazytest-msg")))
 
   last_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
