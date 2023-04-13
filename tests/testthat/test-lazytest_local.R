@@ -23,13 +23,13 @@ test_that("lazytest_local() works", {
     "blip"
   )
   expect_equal(
-    as.data.frame.testthat_results(first_run$get_result())[,1],
+    executed_test_files(first_run),
     c("test-blip.R", "test-blop.R")
   )
 
   second_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_equal(
-    as.data.frame.testthat_results(second_run$get_result())[,1],
+    executed_test_files(second_run),
     c("test-blip.R")
   )
 
@@ -37,8 +37,8 @@ test_that("lazytest_local() works", {
   edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
   new_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_equal(
-    as.data.frame.testthat_results(second_run$get_result())[,1],
-    c("test-blip.R")
+    executed_test_files(new_run),
+    c("test-blip.R", "test-blop.R")
   )
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
 
@@ -48,7 +48,7 @@ test_that("lazytest_local() works", {
   last_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
   expect_equal(
-    as.data.frame.testthat_results(last_run$get_result())[,1],
+    executed_test_files(last_run),
     c("test-blip.R", "test-blop.R")
   )
 })
