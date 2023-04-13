@@ -41,4 +41,11 @@ test_that("lazytest_local() works", {
 
   run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
   expect_snapshot(readLines(file.path(pkg_dir, "lazytest-msg")))
+
+  last_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
+  expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
+  expect_equal(
+    as.data.frame.testthat_results(last_run$get_result())[,1],
+    c("test-blip.R", "test-blop.R")
+  )
 })
