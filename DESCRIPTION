@@ -20,7 +20,6 @@ Imports:
     testthat
 Suggests: 
     callr,
-    fledge,
     here,
     pkgload,
     rstudioapi,

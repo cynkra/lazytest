@@ -14,3 +14,8 @@ run_lazytest <- function(pkg_dir, lazytest_dir) {
     process$wait()
   })
 }
+
+lazytest_dir <- function() {
+  here::here()
+
+}
