@@ -17,6 +17,6 @@ failing_test_lines <- function() {
 edit_test <- function(test_name, test_lines, pkg_dir) {
   writeLines(
     test_lines,
-    file.path(pkg_dir, "tests", "testthat", sprintf("tests-%s.R", test_name))
+    file.path(pkg_dir, "tests", "testthat", sprintf("test-%s.R", test_name))
   )
 }

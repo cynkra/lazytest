@@ -11,24 +11,22 @@ test_that("lazytest_local() works", {
   edit_test("blop", passing_test_lines(), pkg_dir = pkg_dir)
   edit_test("blip", failing_test_lines(), pkg_dir = pkg_dir)
 
-  lazytest_dir <- here::here()
-
-  # convoluted way to run the tests
-  # without their results being reported for this test file
-  withr::with_dir(pkg_dir, {
-    process <- callr::r_bg(function(lazytest_dir) {
-      pkgload::load_all(lazytest_dir)
-      lazytest::lazytest_local()
-    },
-      args = list(lazytest_dir = lazytest_dir)
-    )
-    process$wait()
-  })
+  first_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
 
   expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
   # expect_snapshot_file didn't record anything?!
   expect_equal(
     readLines(file.path(pkg_dir, ".lazytest")),
-    "test-blip"
+    "blip"
+  )
+  expect_equal(
+    as.data.frame.testthat_results(first_run$get_result())[,1],
+    c("test-blip.R", "test-blop.R")
+  )
+
+  second_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
+  expect_equal(
+    as.data.frame.testthat_results(second_run$get_result())[,1],
+    c("test-blip.R")
   )
 })
