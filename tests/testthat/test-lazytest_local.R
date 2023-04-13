@@ -1,6 +1,7 @@
 test_that("lazytest_local() works", {
   withr::local_options(usethis.quiet = TRUE)
 
+  # set up test package ----
   pkg_parent_dir <- withr::local_tempdir()
   pkg_dir <- fledge::create_demo_project(dir = pkg_parent_dir, news = FALSE)
   usethis::with_project(path = pkg_dir, {
@@ -11,6 +12,7 @@ test_that("lazytest_local() works", {
   edit_test("blop", passing_test_lines(), pkg_dir = pkg_dir)
   edit_test("blip", failing_test_lines(), pkg_dir = pkg_dir)
 
+  # run tests, including one failing test, twice ----
   first_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
 
   expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
@@ -30,7 +32,7 @@ test_that("lazytest_local() works", {
     c("test-blip.R")
   )
 
-  # Now fix test!
+  # Fix failing test, run tests twice ----
   edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
   new_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = here::here())
   expect_equal(
