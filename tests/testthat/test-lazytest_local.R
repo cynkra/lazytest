@@ -9,7 +9,7 @@ test_that("lazytest_local() works", {
     usethis::use_testthat()
     usethis::use_test("blop")
     usethis::use_test("blip")
-  }, force = TRUE)
+  })
   edit_test("blop", passing_test_lines(), pkg_dir = pkg_dir)
   edit_test("blip", failing_test_lines(), pkg_dir = pkg_dir)
 
