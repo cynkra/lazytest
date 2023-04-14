@@ -69,7 +69,7 @@ lazytest_local <- function(path = ".",
     )
   }
 
-  out <- test_local(
+  out <- testthat::test_local(
     path,
     reporter,
     ...,
