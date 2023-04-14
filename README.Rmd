@@ -28,13 +28,16 @@ library(lazytest)
 ```
 
 The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run.
-It integrates tightly with the testthat package and provides the `lazytest_local()` function, a drop-in replacement for `testthat::test_local()`, that memoizes the tests that have failed and runs only those tests in subsequent runs.
-If all active tests have succeeded, the entire test suite is run in a second pass.
+It integrates tightly with the testthat package and provides the `lazytest_local()` function, a drop-in replacement for `testthat::test_local()`, that 
 
+- memoizes which tests have failed;
+- runs only those tests in subsequent runs.
+
+If all active tests have succeeded, the entire test suite is run in a second pass.
 
 ## Usage
 
-Call `lazytest_local()` in lieu of `testthat::test_local()` or `devtools::test()`:
+Call `lazytest_local()` instead of `testthat::test_local()` or `devtools::test()`:
 
 ```{r, eval = FALSE}
 lazytest::lazytest_local()
@@ -54,9 +57,15 @@ In the next call, if `.lazytest` exists, it is consulted, and a suitable `filter
 When all tests have passed and not all tests were run, a second call to `testthat::test_local()` is initiated, to make sure that no failures have been introduced in the meantime.
 
 
-## Installation
+## Installation and optional setup
 
-You can install the development version of lazytest like so:
+You can install the development version of lazytest from [cynkra R-universe](https://cynkra.r-universe.dev/):
+
+``` r
+install.packages('lazytest', repos = c('https://cynkra.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Or from GitHub:
 
 ``` r
 pak::pak("krlmlr/lazytest")
