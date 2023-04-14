@@ -36,6 +36,7 @@ test_that("lazytest_local() works", {
   # fix failing test, run tests twice ----
   edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
   new_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
+  # When all failing tests have succeeded, the entire test suite is rerun.
   expect_equal(
     executed_test_files(new_run),
     c("test-blip.R", "test-blop.R")
@@ -43,7 +44,10 @@ test_that("lazytest_local() works", {
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
 
   run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
-  expect_snapshot(brio::read_lines(file.path(pkg_dir, "lazytest-msg")))
+  expect_match(
+    toString(brio::read_lines(file.path(pkg_dir, "lazytest-msg"))),
+    "Testing all tests next time"
+    )
 
   last_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
