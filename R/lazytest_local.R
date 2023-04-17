@@ -22,16 +22,6 @@ lazytest_local <- function(path = ".",
                            filter = NULL,
                            load_package = "source") {
 
-  # return(test_local(
-  #   path,
-  #   reporter,
-  #   ...,
-  #   stop_on_failure = FALSE,
-  #   stop_on_warning = FALSE,
-  #   filter = filter,
-  #   load_package = load_package
-  # ))
-
   if (!identical(path, ".")) {
     cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.')
   }
