@@ -9,6 +9,7 @@
 #' @param lazytest_reset Set to `TRUE` to run all tests, regardless of what the
 #'   last test results were.
 #' @export
+#' @return A list (invisibly) containing data about the test results.
 #' @examples
 #' \dontrun{
 #' lazytest_local()

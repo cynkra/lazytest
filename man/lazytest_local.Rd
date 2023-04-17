@@ -48,6 +48,9 @@ field in your DESCRIPTION file:
 }\if{html}{\out{</div>}}
 }}
 }
+\value{
+A list (invisibly) containing data about the test results.
+}
 \description{
 A drop-in replacement for \code{testthat::test_local()} that by default reruns
 only the tests that failed last time.
