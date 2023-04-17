@@ -11,9 +11,9 @@ A companion package to the testthat package that saves development time by helpi
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/krlmlr/lazytest}
+  \item \url{https://github.com/cynkra/lazytest}
   \item \url{https://cynkra.github.io/lazytest/}
-  \item Report bugs at \url{https://github.com/krlmlr/lazytest/issues}
+  \item Report bugs at \url{https://github.com/cynkra/lazytest/issues}
 }
 
 }

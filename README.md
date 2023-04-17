@@ -4,12 +4,12 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/krlmlr/lazytest/actions/workflows/R-CMD-check.yaml) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/lazytest)](https://CRAN.R-project.org/package=lazytest)
+[![R-CMD-check](https://github.com/cynkra/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/cynkra/lazytest/actions/workflows/R-CMD-check.yaml) [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental) [![CRAN status](https://www.r-pkg.org/badges/version/lazytest)](https://CRAN.R-project.org/package=lazytest)
 
 <!-- badges: end -->
 
 <pre class='chroma'>
-<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/krlmlr/lazytest'>lazytest</a></span><span class='o'>)</span></span></pre>
+<span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://github.com/cynkra/lazytest'>lazytest</a></span><span class='o'>)</span></span></pre>
 
 The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the [`lazytest_local()`](https://cynkra.github.io/lazytest/reference/lazytest_local.html) function, a drop-in replacement for [`testthat::test_local()`](https://testthat.r-lib.org/reference/test_package.html), that
 
@@ -43,7 +43,7 @@ You can install the development version of lazytest from [cynkra R-universe](htt
 Or from GitHub:
 
 <pre class='chroma'>
-<span><span class='nf'>pak</span><span class='nf'>::</span><span class='nf'><a href='http://pak.r-lib.org/reference/pak.html'>pak</a></span><span class='o'>(</span><span class='s'>"krlmlr/lazytest"</span><span class='o'>)</span></span></pre>
+<span><span class='nf'>pak</span><span class='nf'>::</span><span class='nf'><a href='https://pak.r-lib.org/reference/pak.html'>pak</a></span><span class='o'>(</span><span class='s'>"krlmlr/lazytest"</span><span class='o'>)</span></span></pre>
 
 If you’re using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T). The add-in provides two commands:
 
@@ -53,7 +53,7 @@ If you’re using RStudio, it is a good idea to remap the shortcut for running t
 
 This allows you to keep the workflows you’re accustomed to and to benefit immediately.
 
-![RStudio shortcut configuration](https://github.com/krlmlr/lazytest/raw/main/readme/rstudio-kb.png)
+![RStudio shortcut configuration](https://github.com/cynkra/lazytest/raw/main/readme/rstudio-kb.png)
 
 ------------------------------------------------------------------------
 
