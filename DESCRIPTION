@@ -9,8 +9,8 @@ Description: A companion package to the testthat package that saves
     development time by helping you rerun only the tests that have failed
     during the last run.
 License: MIT + file LICENSE
-URL: https://github.com/krlmlr/lazytest, https://cynkra.github.io/lazytest/
-BugReports: https://github.com/krlmlr/lazytest/issues
+URL: https://github.com/cynkra/lazytest, https://cynkra.github.io/lazytest/
+BugReports: https://github.com/cynkra/lazytest/issues
 Imports: 
     brio,
     cli,
