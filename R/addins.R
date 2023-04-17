@@ -5,7 +5,6 @@ run_tests <- function() {
 run_lazytests <- function() {
   cmd <- paste0(
     "R -q -e '",
-    # 'pkgload::load_all("~/git/R/lazytest"); ',
     "lazytest::lazytest_local()'"
   )
   rstudioapi::terminalExecute(cmd)
