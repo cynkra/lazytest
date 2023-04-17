@@ -1,6 +1,8 @@
 # From testthat, MIT licensed, https://testthat.r-lib.org/LICENSE.html
 
-test_files_check_df <- function(df, stop_on_failure = TRUE, stop_on_warning = FALSE) {
+test_files_check_df <- function(df,
+                                stop_on_failure = TRUE,
+                                stop_on_warning = FALSE) {
   if (stop_on_failure && !all_passed_df(df)) {
     stop("Test failures", call. = FALSE)
   }
@@ -97,5 +99,5 @@ expectation_failure <- function(exp) expectation_type(exp) == "failure"
 expectation_error   <- function(exp) expectation_type(exp) == "error"
 expectation_skip    <- function(exp) expectation_type(exp) == "skip"
 expectation_warning <- function(exp) expectation_type(exp) == "warning"
-expectation_broken  <- function(exp) expectation_failure(exp) || expectation_error(exp)
-expectation_ok      <- function(exp) expectation_type(exp) %in% c("success", "warning")
+expectation_broken  <- function(exp) expectation_failure(exp) || expectation_error(exp) # nolint
+expectation_ok      <- function(exp) expectation_type(exp) %in% c("success", "warning") # nolint
