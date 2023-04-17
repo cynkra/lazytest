@@ -1,7 +1,6 @@
 Package: lazytest
 Title: Runs Only Failing Tests
 Version: 0.0.0.9005
-Date: 2023-03-24
 Authors@R: 
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412"))
