@@ -8,7 +8,7 @@
 <meta name="description" content="A companion package to the testthat package that saves
     development time by helping you rerun only the tests that have failed
     during the last run.">
-<title>Runs Only Failing Tests • lazytest</title>
+<title>Runs Only Failed Tests • lazytest</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -20,7 +20,7 @@
 <script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Fira_Mono-0.4.5/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Runs Only Failing Tests">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Runs Only Failed Tests">
 <meta property="og:description" content="A companion package to the testthat package that saves
     development time by helping you rerun only the tests that have failed
     during the last run.">
@@ -37,7 +37,7 @@
     <a href="https://cynkra.com" class="external-link"><img src="https://cynkra.com/assets/img/logo_small.svg" id="cynkra-logo-nav" alt="cynkra"></a>
     <a class="navbar-brand me-2" href="index.html">lazytest</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9005</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9006</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,6 +92,97 @@
 <pre class="chroma">
 <span><span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://cynkra.github.io/lazytest/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span></pre>
 <p>The package also provides RStudio add-ins that run the tests in a new terminal. Unfortunately, the “Test package” command is hard-wired to <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>, and there seems to be no way to customize it or hook into it.</p>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>Let’s create a package with two boilerplate tests.</p>
+<pre class="chroma">
+<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_options.html" class="external-link">local_options</a></span><span class="o">(</span>usethis.quiet <span class="o">=</span> <span class="kc">TRUE</span><span class="o">)</span></span>
+<span></span>
+<span><span class="nv">pkg_parent_dir</span> <span class="o">&lt;-</span> <span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_tempfile.html" class="external-link">local_tempdir</a></span><span class="o">(</span><span class="o">)</span></span>
+<span><span class="nv">pkg_dir</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_parent_dir</span>, <span class="s">"tea"</span><span class="o">)</span></span>
+<span><span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/create_package.html" class="external-link">create_package</a></span><span class="o">(</span><span class="nv">pkg_dir</span><span class="o">)</span></span>
+<span><span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/proj_utils.html" class="external-link">with_project</a></span><span class="o">(</span>path <span class="o">=</span> <span class="nv">pkg_dir</span>, <span class="o">{</span></span>
+<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_testthat.html" class="external-link">use_testthat</a></span><span class="o">(</span><span class="o">)</span></span>
+<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="o">(</span><span class="s">"blop"</span><span class="o">)</span></span>
+<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="o">(</span><span class="s">"blip"</span><span class="o">)</span></span>
+<span><span class="o">}</span><span class="o">)</span></span></pre>
+<p>If we run the tests, they all pass.</p>
+<pre class="chroma">
+<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
+<span>  <span class="nv">pkg_dir</span>,</span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://cynkra.github.io/lazytest/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span><span class="o">)</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
+<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
+<span><span class="c">#&gt; ⠏ |         0 | blip                                                            <span style="color: #00BB00;">✔</span> |         1 | blip</span></span>
+<span><span class="c">#&gt; ⠏ |         0 | blop                                                            <span style="color: #00BB00;">✔</span> |         1 | blop</span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="c">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | <span style="color: #00BB00;">PASS</span> 2 ]</span></span>
+<span><span class="c">#&gt; → Testing all tests next time.</span></span></pre>
+<p>Now if we replace one of the tests with a failing test,</p>
+<pre class="chroma">
+<span><span class="nf">brio</span><span class="nf">::</span><span class="nf"><a href="https://brio.r-lib.org/reference/write_lines.html" class="external-link">write_lines</a></span><span class="o">(</span></span>
+<span>  text <span class="o">=</span>  <span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span></span>
+<span>    <span class="s">'test_that("blop() works", {'</span>,</span>
+<span>    <span class="s">'expect_equal(2 * 2, 42)'</span>,</span>
+<span>    <span class="s">'})'</span></span>
+<span>  <span class="o">)</span>,</span>
+<span>  path <span class="o">=</span> <span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_dir</span>, <span class="s">"tests"</span>, <span class="s">"testthat"</span>, <span class="s">"test-blop.R"</span><span class="o">)</span></span>
+<span><span class="o">)</span></span></pre>
+<p>and then run the tests,</p>
+<pre class="chroma">
+<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
+<span>  <span class="nv">pkg_dir</span>,</span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://cynkra.github.io/lazytest/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span><span class="o">)</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
+<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
+<span><span class="c">#&gt; ⠏ |         0 | blip                                                            <span style="color: #00BB00;">✔</span> |         1 | blip</span></span>
+<span><span class="c">#&gt; ⠏ |         0 | blop                                                            ⠋ | 1       0 | blop                                                            <span style="color: #BB0000;">✖</span> | <span style="color: #BBBB00;">1</span>       0 | blop<span style="color: #555555;"> [0.2s]</span></span></span>
+<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
+<span><span class="c">#&gt; <span style="color: #BBBB00; font-weight: bold;">Failure</span><span style="font-weight: bold;"> (</span><span style="color: #0000BB; font-weight: bold;">test-blop.R:2:1</span><span style="font-weight: bold;">): blop() works</span></span></span>
+<span><span class="c">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt;   `actual`:  <span style="color: #00BB00;">4</span></span></span>
+<span><span class="c">#&gt; `expected`: <span style="color: #00BB00;">42</span></span></span>
+<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">Duration: 0.3 s</span></span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt; [ <span style="color: #BBBB00;">FAIL</span> 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
+<span><span class="c">#&gt; → Testing the following tests next time:</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">•</span> blop</span></span>
+<span><span class="c">#&gt; Error: Test failures</span></span></pre>
+<p>a file is created with the failing test name:</p>
+<pre class="chroma">
+<span><span class="nf">brio</span><span class="nf">::</span><span class="nf"><a href="https://brio.r-lib.org/reference/read_lines.html" class="external-link">read_lines</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_dir</span>, <span class="s">".lazytest"</span><span class="o">)</span><span class="o">)</span></span>
+<span><span class="c">#&gt; [1] "blop"</span></span></pre>
+<p>Next time we run the tests, only this test will be run, until it is fixed at which point all tests are run again to check no failure has been introduced elsewhere.</p>
+<pre class="chroma">
+<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
+<span>  <span class="nv">pkg_dir</span>,</span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://cynkra.github.io/lazytest/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span><span class="o">)</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing only tests that failed last time:</span></span>
+<span><span class="c">#&gt; <span style="color: #00BBBB;">•</span> blop</span></span>
+<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
+<span><span class="c">#&gt; ⠏ |         0 | blop                                                            <span style="color: #BB0000;">✖</span> | <span style="color: #BBBB00;">1</span>       0 | blop</span></span>
+<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
+<span><span class="c">#&gt; <span style="color: #BBBB00; font-weight: bold;">Failure</span><span style="font-weight: bold;"> (</span><span style="color: #0000BB; font-weight: bold;">test-blop.R:2:1</span><span style="font-weight: bold;">): blop() works</span></span></span>
+<span><span class="c">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt;   `actual`:  <span style="color: #00BB00;">4</span></span></span>
+<span><span class="c">#&gt; `expected`: <span style="color: #00BB00;">42</span></span></span>
+<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
+<span><span class="c">#&gt; </span></span>
+<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="c">#&gt; [ <span style="color: #BBBB00;">FAIL</span> 1 | WARN 0 | SKIP 0 | PASS 0 ]</span></span>
+<span><span class="c">#&gt; → Repeating the same tests next time.</span></span>
+<span><span class="c">#&gt; Error: Test failures</span></span></pre>
 </div>
 <div class="section level2">
 <h2 id="how-does-it-work">How does it work?<a class="anchor" aria-label="anchor" href="#how-does-it-work"></a>
@@ -154,6 +245,7 @@
 <ul class="list-unstyled">
 <li>
 <a href="https://cynkra.com/about/" class="external-link">Kirill Müller</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-1416-3412" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>cynkra GmbH <br><small class="roles"> Funder, copyright holder </small>  </li>
 </ul>
 </div>
 
@@ -172,7 +264,7 @@
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by <a href="https://cynkra.com/about/" class="external-link">Kirill Müller</a>.</p>
+<p>Developed by <a href="https://cynkra.com/about/" class="external-link">Kirill Müller</a>, cynkra GmbH.</p>
 </div>
 
 <div class="pkgdown-footer-right">
