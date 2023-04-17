@@ -142,8 +142,6 @@ field in your DESCRIPTION file:</p>
 <span><span class="co">#&gt; v |         1 | blop</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
-<span><span class="co">#&gt; Duration: 0.1 s</span></span>
-<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</span></span>
 <span><span class="co">#&gt; &gt; Testing all tests next time.</span></span></code></pre><p></p></div>
 <p>Now if we replace one of the tests with a failing test,</p>
@@ -168,7 +166,7 @@ field in your DESCRIPTION file:</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; / |         0 | blop                                                            </span></span>
 <span><span class="co">#&gt; - | 1       0 | blop                                                            </span></span>
-<span><span class="co">#&gt; x | 1       0 | blop [0.2s]</span></span>
+<span><span class="co">#&gt; x | 1       0 | blop [0.1s]</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
 <span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
@@ -178,7 +176,7 @@ field in your DESCRIPTION file:</p>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
-<span><span class="co">#&gt; Duration: 0.3 s</span></span>
+<span><span class="co">#&gt; Duration: 0.2 s</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
 <span><span class="co">#&gt; &gt; Testing the following tests next time:</span></span>
