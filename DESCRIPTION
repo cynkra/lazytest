@@ -1,5 +1,5 @@
 Package: lazytest
-Title: Runs Only Failing Tests
+Title: Runs Only Failed Tests
 Version: 0.0.0.9006
 Date: 2023-04-15
 Authors@R: c(
