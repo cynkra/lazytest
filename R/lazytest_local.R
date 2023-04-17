@@ -9,10 +9,10 @@
 #' @param lazytest_reset Set to `TRUE` to run all tests, regardless of what the
 #'   last test results were.
 #' @export
-#' @examples
-#' \dontrun{
-#' lazytest_local()
-#' }
+#' @section Example:
+#'
+#' ```{r child='man/rmd/lazytest_local.Rmd'}
+#' ```
 lazytest_local <- function(path = ".",
                            reporter = NULL,
                            ...,

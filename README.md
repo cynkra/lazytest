@@ -68,7 +68,7 @@ Now if we replace one of the tests with a failing test,
 <span>    <span class='s'>'expect_equal(2 * 2, 42)'</span>,</span>
 <span>    <span class='s'>'})'</span></span>
 <span>  <span class='o'>)</span>,</span>
-<span>  path <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='o'>(</span><span class='nv'>pkg_dir</span>, <span class='s'>"tests"</span>, <span class='s'>"testthat"</span>, <span class='s'>"test-blop.R"</span><span class='o'>)</span>   </span>
+<span>  path <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='o'>(</span><span class='nv'>pkg_dir</span>, <span class='s'>"tests"</span>, <span class='s'>"testthat"</span>, <span class='s'>"test-blop.R"</span><span class='o'>)</span></span>
 <span><span class='o'>)</span></span></pre>
 
 and then run the tests,
@@ -81,7 +81,7 @@ and then run the tests,
 <span><span class='c'>#&gt; <span style='color: #00BBBB;'>ℹ</span> Testing all tests.</span></span>
 <span><span class='c'>#&gt; <span style='color: #00BB00;'>✔</span> | <span style='color: #BBBB00;'>F</span> <span style='color: #BB00BB;'>W</span> <span style='color: #0000BB;'>S</span> <span style='color: #00BB00;'> OK</span> | Context</span></span>
 <span><span class='c'>#&gt; ⠏ |         0 | blip                                                            <span style='color: #00BB00;'>✔</span> |         1 | blip</span></span>
-<span><span class='c'>#&gt; ⠏ |         0 | blop                                                            ⠋ | 1       0 | blop                                                            <span style='color: #BB0000;'>✖</span> | <span style='color: #BBBB00;'>1</span>       0 | blop<span style='color: #555555;'> [0.3s]</span></span></span>
+<span><span class='c'>#&gt; ⠏ |         0 | blop                                                            ⠋ | 1       0 | blop                                                            <span style='color: #BB0000;'>✖</span> | <span style='color: #BBBB00;'>1</span>       0 | blop<span style='color: #555555;'> [0.2s]</span></span></span>
 <span><span class='c'>#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
 <span><span class='c'>#&gt; <span style='color: #BBBB00; font-weight: bold;'>Failure</span><span style='font-weight: bold;'> (</span><span style='color: #0000BB; font-weight: bold;'>test-blop.R:2:1</span><span style='font-weight: bold;'>): blop() works</span></span></span>
 <span><span class='c'>#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
