@@ -115,7 +115,7 @@ and then run the tests,
 #> 
 #> / |         0 | blop                                                            
 #> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.2s]
+#> x | 1       0 | blop [0.1s]
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -128,6 +128,8 @@ and then run the tests,
 #> Duration: 0.2 s
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
+#> 
+#> No one gets it right on their first try
 #> > Testing the following tests next time:
 #> * blop
 #> Error: Test failures
