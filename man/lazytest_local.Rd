@@ -80,13 +80,6 @@ If we run the tests, they all pass.
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
-#> 
-#> Attaching package: 'testthat'
-#> 
-#> 
-#> The following object is masked from 'package:devtools':
-#> 
-#>     test_file
 #> v | F W S  OK | Context
 #> 
 #> / |         0 | blip                                                            
