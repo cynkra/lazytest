@@ -3,7 +3,8 @@
 run_lazytest <- function(pkg_dir, lazytest_dir) {
   process <- callr::r_bg(
     function(pkg_dir, lazytest_dir) {
-      if (grepl("Rcheck", lazytest_dir)) {
+      # use library for covr and R CMD check
+      if (isTRUE(as.logical(Sys.getenv("R_COVR", "false"))) || grepl("Rcheck", lazytest_dir)) {
         library("lazytest")
       } else {
         pkgload::load_all(lazytest_dir)
