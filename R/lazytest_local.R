@@ -24,20 +24,17 @@ lazytest_local <- function(path = ".",
                            filter = NULL,
                            load_package = "source") {
 
-  if (!identical(path, ".")) {
-    cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.') # nolint
-  }
-
   if (!is.null(filter)) {
     cli::cli_abort("{.code lazytest_local()} requires {.code filter = NULL}, use {.code testthat::test_local()} to pass a {.code filter} argument.") # nolint
   }
 
   CONTEXT_FILE_NAME <- ".lazytest"
+  CONTEXT_FILE_PATH <- fs::path(path, CONTEXT_FILE_NAME)
 
-  has_context <- fs::file_exists(CONTEXT_FILE_NAME)
+  has_context <- fs::file_exists(CONTEXT_FILE_PATH)
   if (has_context) {
-    contexts <- brio::read_lines(CONTEXT_FILE_NAME)
-    fs::file_delete(CONTEXT_FILE_NAME)
+    contexts <- brio::read_lines(CONTEXT_FILE_PATH)
+    fs::file_delete(CONTEXT_FILE_PATH)
   }
 
   if (!has_context || lazytest_reset) {
@@ -80,7 +77,7 @@ lazytest_local <- function(path = ".",
   failed_contexts <- context_name(failed_files)
 
   if (length(failed_contexts) > 0) {
-    brio::write_lines(failed_contexts, CONTEXT_FILE_NAME)
+    brio::write_lines(failed_contexts, CONTEXT_FILE_PATH)
     if (identical(failed_contexts, contexts)) {
       cli::cli_inform(c(
         ">" = "Repeating the same tests next time."
