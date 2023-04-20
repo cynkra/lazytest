@@ -61,6 +61,8 @@ In the next call, if `.lazytest` exists, it is consulted, and a suitable `filter
 
 When all tests have passed and not all tests were run, a second call to `testthat::test_local()` is initiated, to make sure that no failures have been introduced in the meantime.
 
+The presence of a `.lazytest` file in the package source indicates that the last test run has failed somewhere.
+You should not need to gitignore or Rbuildignore it: you should fix the reason behind the test failure, then run tests again, before committing to your repository's default branch for instance.
 
 ## Installation and optional setup
 
