@@ -46,6 +46,11 @@ lazytest::lazytest_local()
 The package also provides RStudio add-ins that run the tests in a new terminal.
 Unfortunately, the "Test package" command is hard-wired to `devtools::test()`, and there seems to be no way to customize it or hook into it.
 
+## Example
+
+```{r child="man/rmd/lazytest_local.Rmd"}
+
+```
 
 ## How does it work?
 
