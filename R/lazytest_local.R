@@ -9,11 +9,10 @@
 #' @param lazytest_reset Set to `TRUE` to run all tests, regardless of what the
 #'   last test results were.
 #' @export
-#' @return A list (invisibly) containing data about the test results.
-#' @examples
-#' \dontrun{
-#' lazytest_local()
-#' }
+#' @section Example:
+#'
+#' ```{r child='man/rmd/lazytest_local.Rmd'}
+#' ```
 lazytest_local <- function(path = ".",
                            reporter = NULL,
                            ...,
@@ -22,16 +21,6 @@ lazytest_local <- function(path = ".",
                            stop_on_warning = FALSE,
                            filter = NULL,
                            load_package = "source") {
-
-  # return(test_local(
-  #   path,
-  #   reporter,
-  #   ...,
-  #   stop_on_failure = FALSE,
-  #   stop_on_warning = FALSE,
-  #   filter = filter,
-  #   load_package = load_package
-  # ))
 
   if (!identical(path, ".")) {
     cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.')

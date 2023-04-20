@@ -4,7 +4,7 @@
 \name{lazytest-package}
 \alias{lazytest}
 \alias{lazytest-package}
-\title{lazytest: Runs Only Failing Tests}
+\title{lazytest: Runs Only Failed Tests}
 \description{
 A companion package to the testthat package that saves development time by helping you rerun only the tests that have failed during the last run.
 }
@@ -19,6 +19,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Kirill Müller \email{kirill@cynkra.com} (\href{https://orcid.org/0000-0002-1416-3412}{ORCID})
+
+Other contributors:
+\itemize{
+  \item cynkra GmbH \email{mail@cynkra.com} [funder, copyright holder]
+}
 
 }
 \keyword{internal}
