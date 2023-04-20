@@ -1,0 +1,62 @@
+Let's create a package with two boilerplate tests.
+
+```{r}
+withr::local_options(usethis.quiet = TRUE)
+
+pkg_parent_dir <- withr::local_tempdir()
+pkg_dir <- file.path(pkg_parent_dir, "tea")
+usethis::create_package(pkg_dir)
+usethis::with_project(path = pkg_dir, {
+  usethis::use_testthat()
+  usethis::use_test("blop")
+  usethis::use_test("blip")
+})
+
+```
+
+If we run the tests, they all pass.
+
+```{r}
+withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+```
+
+Now if we replace one of the tests with a failing test,
+
+```{r}
+brio::write_lines(
+  text =  c(
+    'test_that("blop() works", {',
+    'expect_equal(2 * 2, 42)',
+    '})'
+  ),
+  path = file.path(pkg_dir, "tests", "testthat", "test-blop.R")
+)
+
+```
+
+and then run the tests,
+
+```{r, error=TRUE}
+withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+```
+
+a file is created with the failing test name:
+
+```{r}
+brio::read_lines(file.path(pkg_dir, ".lazytest"))
+```
+
+Next time we run the tests, only this test will be run, until it is fixed at which point all tests are run again to check no failure has been introduced elsewhere.
+
+```{r, error=TRUE}
+withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+```

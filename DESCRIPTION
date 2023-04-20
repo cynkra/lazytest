@@ -1,15 +1,17 @@
 Package: lazytest
-Title: Runs Only Failing Tests
-Version: 0.0.0.9005
-Authors@R: 
+Title: Runs Only Failed Tests
+Version: 0.0.0.9009
+Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-1416-3412"))
+           comment = c(ORCID = "0000-0002-1416-3412")),
+    person("cynkra GmbH", , , "mail@cynkra.com", role = c("fnd", "cph"))
+  )
 Description: A companion package to the testthat package that saves
     development time by helping you rerun only the tests that have failed
     during the last run.
 License: MIT + file LICENSE
-URL: https://github.com/krlmlr/lazytest, https://krlmlr.github.io/lazytest
-BugReports: https://github.com/krlmlr/lazytest/issues
+URL: https://github.com/cynkra/lazytest, https://lazytest.cynkra.com/
+BugReports: https://github.com/cynkra/lazytest/issues
 Imports: 
     brio,
     cli,
@@ -18,7 +20,14 @@ Imports:
     rlang,
     testthat
 Suggests: 
-    rstudioapi
+    callr,
+    here,
+    pkgload,
+    rstudioapi,
+    usethis,
+    withr
+Config/Needs/website: cynkra/cynkratemplate
+Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

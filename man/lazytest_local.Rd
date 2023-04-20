@@ -48,12 +48,132 @@ field in your DESCRIPTION file:
 }\if{html}{\out{</div>}}
 }}
 }
+\value{
+A list (invisibly) containing data about the test results,
+like \code{\link[testthat:test_package]{testthat::test_local()}}.
+}
 \description{
 A drop-in replacement for \code{testthat::test_local()} that by default reruns
 only the tests that failed last time.
 }
-\examples{
-\dontrun{
-lazytest_local()
+\section{Example}{
+
+
+Let's create a package with two boilerplate tests.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::local_options(usethis.quiet = TRUE)
+
+pkg_parent_dir <- withr::local_tempdir()
+pkg_dir <- file.path(pkg_parent_dir, "tea")
+usethis::create_package(pkg_dir)
+usethis::with_project(path = pkg_dir, \{
+  usethis::use_testthat()
+  usethis::use_test("blop")
+  usethis::use_test("blip")
+\})
+}\if{html}{\out{</div>}}
+
+If we run the tests, they all pass.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+#> i Testing all tests.
+#> 
+#> Attaching package: 'testthat'
+#> 
+#> 
+#> The following object is masked from 'package:devtools':
+#> 
+#>     test_file
+#> v | F W S  OK | Context
+#> 
+#> / |         0 | blip                                                            
+#> v |         1 | blip
+#> 
+#> / |         0 | blop                                                            
+#> v |         1 | blop
+#> 
+#> == Results =====================================================================
+#> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
+#> > Testing all tests next time.
+}\if{html}{\out{</div>}}
+
+Now if we replace one of the tests with a failing test,
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{brio::write_lines(
+  text =  c(
+    'test_that("blop() works", \{',
+    'expect_equal(2 * 2, 42)',
+    '\})'
+  ),
+  path = file.path(pkg_dir, "tests", "testthat", "test-blop.R")
+)
+}\if{html}{\out{</div>}}
+
+and then run the tests,
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+#> i Testing all tests.
+#> v | F W S  OK | Context
+#> 
+#> / |         0 | blip                                                            
+#> v |         1 | blip
+#> 
+#> / |         0 | blop                                                            
+#> - | 1       0 | blop                                                            
+#> x | 1       0 | blop [0.2s]
+#> --------------------------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4
+#> `expected`: 42
+#> --------------------------------------------------------------------------------
+#> 
+#> == Results =====================================================================
+#> Duration: 0.2 s
+#> 
+#> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
+#> > Testing the following tests next time:
+#> * blop
+#> Error: Test failures
+}\if{html}{\out{</div>}}
+
+a file is created with the failing test name:
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{brio::read_lines(file.path(pkg_dir, ".lazytest"))
+#> [1] "blop"
+}\if{html}{\out{</div>}}
+
+Next time we run the tests, only this test will be run, until it is fixed at which point all tests are run again to check no failure has been introduced elsewhere.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::with_dir(
+  pkg_dir,
+  lazytest::lazytest_local()
+)
+#> i Testing only tests that failed last time:
+#> * blop
+#> v | F W S  OK | Context
+#> 
+#> / |         0 | blop                                                            
+#> x | 1       0 | blop
+#> --------------------------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4
+#> `expected`: 42
+#> --------------------------------------------------------------------------------
+#> 
+#> == Results =====================================================================
+#> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
+#> > Repeating the same tests next time.
+#> Error: Test failures
+}\if{html}{\out{</div>}}
 }
-}
+
