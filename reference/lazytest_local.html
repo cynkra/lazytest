@@ -12,7 +12,7 @@ only the tests that failed last time."><!-- mathjax --><script src="https://cdnj
     <a href="https://cynkra.com" class="external-link"><img src="https://cynkra.com/assets/img/logo_small.svg" id="cynkra-logo-nav" alt="cynkra"></a>
     <a class="navbar-brand me-2" href="../index.html">lazytest</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9006</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9009</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ only the tests that failed last time."><!-- mathjax --><script src="https://cdnj
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
       <ul class="navbar-nav"><li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/krlmlr/lazytest/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/cynkra/lazytest/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -43,7 +43,7 @@ only the tests that failed last time."><!-- mathjax --><script src="https://cdnj
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Test a local source package</h1>
-      <small class="dont-index">Source: <a href="https://github.com/krlmlr/lazytest/blob/HEAD/R/lazytest_local.R" class="external-link"><code>R/lazytest_local.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/cynkra/lazytest/blob/HEAD/R/lazytest_local.R" class="external-link"><code>R/lazytest_local.R</code></a></small>
       <div class="d-none name"><code>lazytest_local.Rd</code></div>
     </div>
 
@@ -112,6 +112,13 @@ field in your DESCRIPTION file:</p>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
+
+<p>A list (invisibly) containing data about the test results,
+like <code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code>.</p>
+    </div>
+    <div class="section level2">
     <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a></h2>
     
 
@@ -166,7 +173,7 @@ field in your DESCRIPTION file:</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; / |         0 | blop                                                            </span></span>
 <span><span class="co">#&gt; - | 1       0 | blop                                                            </span></span>
-<span><span class="co">#&gt; x | 1       0 | blop [0.1s]</span></span>
+<span><span class="co">#&gt; x | 1       0 | blop [0.2s]</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
 <span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
