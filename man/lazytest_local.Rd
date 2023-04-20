@@ -129,7 +129,7 @@ and then run the tests,
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> 
-#> No one gets it right on their first try
+#> I believe in you!
 #> > Testing the following tests next time:
 #> * blop
 #> Error: Test failures
