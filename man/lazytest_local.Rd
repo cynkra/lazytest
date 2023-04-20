@@ -48,6 +48,10 @@ field in your DESCRIPTION file:
 }\if{html}{\out{</div>}}
 }}
 }
+\value{
+A list (invisibly) containing data about the test results,
+like \code{\link[testthat:test_package]{testthat::test_local()}}.
+}
 \description{
 A drop-in replacement for \code{testthat::test_local()} that by default reruns
 only the tests that failed last time.
@@ -76,6 +80,13 @@ If we run the tests, they all pass.
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
+#> 
+#> Attaching package: 'testthat'
+#> 
+#> 
+#> The following object is masked from 'package:devtools':
+#> 
+#>     test_file
 #> v | F W S  OK | Context
 #> 
 #> / |         0 | blip                                                            
@@ -115,7 +126,7 @@ and then run the tests,
 #> 
 #> / |         0 | blop                                                            
 #> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.1s]
+#> x | 1       0 | blop [0.2s]
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -128,8 +139,6 @@ and then run the tests,
 #> Duration: 0.2 s
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
-#> 
-#> I believe in you!
 #> > Testing the following tests next time:
 #> * blop
 #> Error: Test failures

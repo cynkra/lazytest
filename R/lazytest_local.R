@@ -8,11 +8,13 @@
 #' @param filter Must be `NULL`.
 #' @param lazytest_reset Set to `TRUE` to run all tests, regardless of what the
 #'   last test results were.
-#' @export
+#' @return A list (invisibly) containing data about the test results,
+#'   like [`testthat::test_local()`].
 #' @section Example:
 #'
 #' ```{r child='man/rmd/lazytest_local.Rmd'}
 #' ```
+#' @export
 lazytest_local <- function(path = ".",
                            reporter = NULL,
                            ...,
