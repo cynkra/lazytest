@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9010 (2023-04-21)
+
+## Documentation
+
+- Fix GitHub links (#22).
+
+- Add return for the exported function (#19).
+
+## Refactoring
+
+- From goodpractice/lintr (#15).
+
+
 # lazytest 0.0.0.9009 (2023-04-20)
 
 - Internal changes only.
