@@ -90,8 +90,6 @@ If we run the tests, they all pass.
 #> 
 #> == Results =====================================================================
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
-#> 
-#> Nice code.
 #> > Testing all tests next time.
 }\if{html}{\out{</div>}}
 
@@ -167,6 +165,8 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 #> 
 #> == Results =====================================================================
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
+#> 
+#> Keep trying!
 #> > Repeating the same tests next time.
 #> Error: Test failures
 }\if{html}{\out{</div>}}
