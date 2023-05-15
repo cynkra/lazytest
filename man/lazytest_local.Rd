@@ -89,11 +89,7 @@ If we run the tests, they all pass.
 #> v |         1 | blop
 #> 
 #> == Results =====================================================================
-#> Duration: 0.1 s
-#> 
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
-#> 
-#> Way to go!
 #> > Testing all tests next time.
 }\if{html}{\out{</div>}}
 
@@ -123,7 +119,7 @@ and then run the tests,
 #> 
 #> / |         0 | blop                                                            
 #> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.3s]
+#> x | 1       0 | blop [0.2s]
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -133,7 +129,7 @@ and then run the tests,
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
-#> Duration: 0.3 s
+#> Duration: 0.2 s
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
