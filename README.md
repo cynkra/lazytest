@@ -57,8 +57,6 @@ If we run the tests, they all pass.
 <span><span class='c'>#&gt; </span></span>
 <span><span class='c'>#&gt; ══ <span style='font-weight: bold;'>Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
 <span><span class='c'>#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | <span style='color: #00BB00;'>PASS</span> 2 ]</span></span>
-<span><span class='c'>#&gt; </span></span>
-<span><span class='c'>#&gt; <span style='color: #00BB00;'>😀</span></span></span>
 <span><span class='c'>#&gt; → Testing all tests next time.</span></span></pre>
 
 Now if we replace one of the tests with a failing test,
@@ -148,7 +146,7 @@ You can install the development version of lazytest from [cynkra R-universe](htt
 Or from GitHub:
 
 <pre class='chroma'>
-<span><span class='nf'>pak</span><span class='nf'>::</span><span class='nf'><a href='http://pak.r-lib.org/reference/pak.html'>pak</a></span><span class='o'>(</span><span class='s'>"krlmlr/lazytest"</span><span class='o'>)</span></span></pre>
+<span><span class='nf'>pak</span><span class='nf'>::</span><span class='nf'><a href='https://pak.r-lib.org/reference/pak.html'>pak</a></span><span class='o'>(</span><span class='s'>"krlmlr/lazytest"</span><span class='o'>)</span></span></pre>
 
 If you’re using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T). The add-in provides two commands:
 
