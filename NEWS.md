@@ -1,5 +1,98 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9026 (2023-05-15)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9025 (2023-05-14)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9024 (2023-05-13)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9023 (2023-05-12)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9022 (2023-05-11)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9021 (2023-05-10)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9020 (2023-05-09)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9019 (2023-05-08)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9018 (2023-05-07)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9017 (2023-05-03)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9016 (2023-05-02)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9015 (2023-05-01)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9014 (2023-04-30)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9013 (2023-04-29)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9012 (2023-04-26)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9011 (2023-04-25)
+
+- Internal changes only.
+
+
+# lazytest 0.0.0.9010 (2023-04-21)
+
+## Documentation
+
+- Fix GitHub links (#22).
+
+- Add return for the exported function (#19).
+
+## Refactoring
+
+- From goodpractice/lintr (#15).
+
+
 # lazytest 0.0.0.9009 (2023-04-20)
 
 - Internal changes only.
