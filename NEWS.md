@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9027 (2023-05-16)
+
+## Documentation
+
+- Add .lazytest guidance (@maelle, #12, #23).
+
+- Add workaround for not having to quote testthat (@maelle, #21).
+
+
 # lazytest 0.0.0.9026 (2023-05-15)
 
 - Internal changes only.
