@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9028 (2023-05-17)
+
+- Internal changes only.
+
+
 # lazytest 0.0.0.9027 (2023-05-16)
 
 ## Documentation
