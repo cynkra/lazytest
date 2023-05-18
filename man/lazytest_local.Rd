@@ -90,8 +90,6 @@ If we run the tests, they all pass.
 #> 
 #> == Results =====================================================================
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
-#> 
-#> YAHOO - slick code.
 #> > Testing all tests next time.
 }\if{html}{\out{</div>}}
 
