@@ -33,7 +33,7 @@
     <a href="https://cynkra.com" class="external-link"><img src="https://cynkra.com/assets/img/logo_small.svg" id="cynkra-logo-nav" alt="cynkra"></a>
     <a class="navbar-brand me-2" href="index.html">lazytest</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9026</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9030</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +75,7 @@
 <!-- badges: end -->
 <pre class="chroma">
 <span><span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="https://github.com/cynkra/lazytest" class="external-link">lazytest</a></span><span class="o">)</span></span></pre>
-<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> function, a drop-in replacement for <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>, that</p>
+<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> function, a drop-in replacement for <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>, that</p>
 <ul>
 <li>memoizes which tests have failed;</li>
 <li>runs only those tests in subsequent runs.</li>
@@ -84,9 +84,9 @@
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>Call <a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> instead of <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> or <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>:</p>
+<p>Call <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> instead of <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> or <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>:</p>
 <pre class="chroma">
-<span><span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span></pre>
+<span><span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span></pre>
 <p>The package also provides RStudio add-ins that run the tests in a new terminal. Unfortunately, the “Test package” command is hard-wired to <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>, and there seems to be no way to customize it or hook into it.</p>
 </div>
 <div class="section level2">
@@ -108,7 +108,7 @@
 <pre class="chroma">
 <span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
 <span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
 <span><span class="o">)</span></span>
 <span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
 <span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
@@ -117,8 +117,6 @@
 <span><span class="c">#&gt; </span></span>
 <span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
 <span><span class="c">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | <span style="color: #00BB00;">PASS</span> 2 ]</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; <span style="color: #00BB00;">😀</span></span></span>
 <span><span class="c">#&gt; → Testing all tests next time.</span></span></pre>
 <p>Now if we replace one of the tests with a failing test,</p>
 <pre class="chroma">
@@ -134,7 +132,7 @@
 <pre class="chroma">
 <span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
 <span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
 <span><span class="o">)</span></span>
 <span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
 <span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
@@ -163,7 +161,7 @@
 <pre class="chroma">
 <span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
 <span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
+<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
 <span><span class="o">)</span></span>
 <span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing only tests that failed last time:</span></span>
 <span><span class="c">#&gt; <span style="color: #00BBBB;">•</span> blop</span></span>
@@ -185,7 +183,7 @@
 <div class="section level2">
 <h2 id="how-does-it-work">How does it work?<a class="anchor" aria-label="anchor" href="#how-does-it-work"></a>
 </h2>
-<p><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> returns an object from which the tests that have failed can be retrieved. <a href="https://lazytest.cynkra.com/reference/lazytest_local.html" class="external-link"><code>lazytest_local()</code></a> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>.</p>
+<p><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> returns an object from which the tests that have failed can be retrieved. <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>.</p>
 <p>When all tests have passed and not all tests were run, a second call to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> is initiated, to make sure that no failures have been introduced in the meantime.</p>
 <p>The presence of a <code>.lazytest</code> file in the package source indicates that the last test run has failed somewhere. You should not need to gitignore or Rbuildignore it: you should fix the reason behind the test failure, then run tests again, before committing to your repository’s default branch for instance.</p>
 </div>
@@ -197,7 +195,7 @@
 <span><span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">'lazytest'</span>, repos <span class="o">=</span> <span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span><span class="s">'https://cynkra.r-universe.dev'</span>, <span class="s">'https://cloud.r-project.org'</span><span class="o">)</span><span class="o">)</span></span></pre>
 <p>Or from GitHub:</p>
 <pre class="chroma">
-<span><span class="nf">pak</span><span class="nf">::</span><span class="nf"><a href="http://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="o">(</span><span class="s">"krlmlr/lazytest"</span><span class="o">)</span></span></pre>
+<span><span class="nf">pak</span><span class="nf">::</span><span class="nf"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="o">(</span><span class="s">"krlmlr/lazytest"</span><span class="o">)</span></span></pre>
 <p>If you’re using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T). The add-in provides two commands:</p>
 <ul>
 <li><p>Run Lazy Tests in New Terminal (recommended mapping: Ctrl + Shift + T / Cmd + Shift + T)</p></li>

@@ -12,7 +12,7 @@ only the tests that failed last time."><!-- mathjax --><script src="https://cdnj
     <a href="https://cynkra.com" class="external-link"><img src="https://cynkra.com/assets/img/logo_small.svg" id="cynkra-logo-nav" alt="cynkra"></a>
     <a class="navbar-brand me-2" href="../index.html">lazytest</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9026</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9030</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,7 +124,8 @@ like <code><a href="https://testthat.r-lib.org/reference/test_package.html" clas
 
 
 <p>Let's create a package with two boilerplate tests.</p>
-<p></p><div class="sourceCode r"><pre><code><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_options.html" class="external-link">local_options</a></span><span class="op">(</span>usethis.quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_seed.html" class="external-link">local_seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
+<span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_options.html" class="external-link">local_options</a></span><span class="op">(</span>usethis.quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">pkg_parent_dir</span> <span class="op">&lt;-</span> <span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_tempfile.html" class="external-link">local_tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">pkg_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pkg_parent_dir</span>, <span class="st">"tea"</span><span class="op">)</span></span>
@@ -149,6 +150,8 @@ like <code><a href="https://testthat.r-lib.org/reference/test_package.html" clas
 <span><span class="co">#&gt; v |         1 | blop</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
+<span><span class="co">#&gt; Duration: 0.1 s</span></span>
+<span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</span></span>
 <span><span class="co">#&gt; &gt; Testing all tests next time.</span></span></code></pre><p></p></div>
 <p>Now if we replace one of the tests with a failing test,</p>
@@ -183,7 +186,7 @@ like <code><a href="https://testthat.r-lib.org/reference/test_package.html" clas
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
-<span><span class="co">#&gt; Duration: 0.2 s</span></span>
+<span><span class="co">#&gt; Duration: 0.3 s</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
 <span><span class="co">#&gt; &gt; Testing the following tests next time:</span></span>
