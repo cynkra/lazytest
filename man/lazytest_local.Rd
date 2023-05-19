@@ -61,7 +61,8 @@ only the tests that failed last time.
 
 Let's create a package with two boilerplate tests.
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::local_options(usethis.quiet = TRUE)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{withr::local_seed(42)
+withr::local_options(usethis.quiet = TRUE)
 
 pkg_parent_dir <- withr::local_tempdir()
 pkg_dir <- file.path(pkg_parent_dir, "tea")
@@ -120,8 +121,7 @@ and then run the tests,
 #> v |         1 | blip
 #> 
 #> / |         0 | blop                                                            
-#> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.2s]
+#> x | 1       0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -131,8 +131,6 @@ and then run the tests,
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
-#> Duration: 0.2 s
-#> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
 #> * blop

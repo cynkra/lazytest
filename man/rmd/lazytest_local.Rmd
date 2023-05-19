@@ -1,6 +1,7 @@
 Let's create a package with two boilerplate tests.
 
 ```{r}
+withr::local_seed(42)
 withr::local_options(usethis.quiet = TRUE)
 
 pkg_parent_dir <- withr::local_tempdir()
