@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9031 (2023-05-20)
+
+## Documentation
+
+- Urlchecker's feedback (@maelle, #26).
+
+- Reduce variability (@maelle, #25, #27).
+
+
 # lazytest 0.0.0.9030 (2023-05-19)
 
 - Internal changes only.
