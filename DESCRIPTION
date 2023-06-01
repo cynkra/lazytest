@@ -1,6 +1,6 @@
 Package: lazytest
 Title: Runs Only Failed Tests
-Version: 0.0.0.9036
+Version: 0.0.0.9037
 Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
