@@ -29,7 +29,7 @@ lazytest_local <- function(path = ".",
   }
 
   CONTEXT_FILE_NAME <- ".lazytest"
-  CONTEXT_FILE_PATH <- fs::path(path, CONTEXT_FILE_NAME)
+  CONTEXT_FILE_PATH <- file.path(path, CONTEXT_FILE_NAME)
 
   has_context <- fs::file_exists(CONTEXT_FILE_PATH)
   if (has_context) {
