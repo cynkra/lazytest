@@ -90,8 +90,6 @@ If we run the tests, they all pass.
 #> v |         1 | blop
 #> 
 #> == Results =====================================================================
-#> Duration: 0.1 s
-#> 
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
 #> > Testing all tests next time.
 }\if{html}{\out{</div>}}
@@ -132,7 +130,7 @@ and then run the tests,
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
-#> Duration: 0.3 s
+#> Duration: 0.2 s
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
