@@ -120,7 +120,7 @@ and then run the tests,
 #> 
 #> / |         0 | blop                                                            
 #> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.2s]
+#> x | 1       0 | blop [0.1s]
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
