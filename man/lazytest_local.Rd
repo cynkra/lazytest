@@ -120,7 +120,7 @@ and then run the tests,
 #> 
 #> / |         0 | blop                                                            
 #> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.2s]
+#> x | 1       0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -130,7 +130,12 @@ and then run the tests,
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
-#> Duration: 0.2 s
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4
+#> `expected`: 42
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
@@ -165,6 +170,13 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4
+#> `expected`: 42
+#> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
 #> > Repeating the same tests next time.
 #> Error: Test failures
