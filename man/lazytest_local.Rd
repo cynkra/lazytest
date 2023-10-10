@@ -81,13 +81,13 @@ If we run the tests, they all pass.
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
-#> v | F W S  OK | Context
+#> v | F W  S  OK | Context
 #> 
-#> / |         0 | blip                                                            
-#> v |         1 | blip
+#> / |          0 | blip                                                           
+#> v |          1 | blip
 #> 
-#> / |         0 | blop                                                            
-#> v |         1 | blop
+#> / |          0 | blop                                                           
+#> v |          1 | blop
 #> 
 #> == Results =====================================================================
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
@@ -113,14 +113,14 @@ and then run the tests,
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
-#> v | F W S  OK | Context
+#> v | F W  S  OK | Context
 #> 
-#> / |         0 | blip                                                            
-#> v |         1 | blip
+#> / |          0 | blip                                                           
+#> v |          1 | blip
 #> 
-#> / |         0 | blop                                                            
-#> - | 1       0 | blop                                                            
-#> x | 1       0 | blop
+#> / |          0 | blop                                                           
+#> - | 1        0 | blop                                                           
+#> x | 1        0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
@@ -157,10 +157,10 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 )
 #> i Testing only tests that failed last time:
 #> * blop
-#> v | F W S  OK | Context
+#> v | F W  S  OK | Context
 #> 
-#> / |         0 | blop                                                            
-#> x | 1       0 | blop
+#> / |          0 | blop                                                           
+#> x | 1        0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
