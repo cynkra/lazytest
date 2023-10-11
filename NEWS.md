@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9051 (2023-10-11)
+
+## Chore
+
+- Use nice to run tests.
+
+- Use correect R path.
+
+
 # lazytest 0.0.0.9050 (2023-10-10)
 
 - Internal changes only.
