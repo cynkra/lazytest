@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9052 (2023-10-12)
+
+## Chore
+
+- Check presence of suggested packages.
+
+
 # lazytest 0.0.0.9051 (2023-10-11)
 
 ## Chore
