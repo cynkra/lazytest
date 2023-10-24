@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9054 (2023-10-24)
+
+## deps
+
+- Require testthat \>= 3.2.0.
+
+
 # lazytest 0.0.0.9053 (2023-10-17)
 
 - Internal changes only.
