@@ -1,4 +1,5 @@
 test_that("lazytest_local() works", {
+  skip_on_covr()
   skip_if_not_installed("here")
   skip_if_not_installed("usethis")
   withr::local_options(usethis.quiet = TRUE)
