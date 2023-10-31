@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9055 (2023-10-31)
+
+## Testing
+
+- Skip on covr.
+
+
 # lazytest 0.0.0.9054 (2023-10-24)
 
 ## deps
