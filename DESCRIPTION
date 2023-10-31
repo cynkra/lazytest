@@ -21,7 +21,6 @@ Imports:
     testthat (>= 3.2.0)
 Suggests: 
     callr,
-    here,
     pkgload,
     rstudioapi,
     usethis,
