@@ -15,15 +15,16 @@
 #' ```{r child='man/rmd/lazytest_local.Rmd'}
 #' ```
 #' @export
-lazytest_local <- function(path = ".",
-                           reporter = NULL,
-                           ...,
-                           lazytest_reset = FALSE,
-                           stop_on_failure = TRUE,
-                           stop_on_warning = FALSE,
-                           filter = NULL,
-                           load_package = "source") {
-
+lazytest_local <- function(
+    path = ".",
+    reporter = NULL,
+    ...,
+    lazytest_reset = FALSE,
+    stop_on_failure = TRUE,
+    stop_on_warning = FALSE,
+    filter = NULL,
+    load_package = "source") {
+#
   if (!identical(path, ".")) {
     cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.') # nolint
   }
@@ -48,6 +49,9 @@ lazytest_local <- function(path = ".",
     cli::cli_inform(c(
       "i" = "Testing all tests."
     ))
+
+    rx <- "^test-(.*)\\.[Rr]$"
+    contexts <- context_name(dir("tests/testthat", pattern = rx, full.names = FALSE))
   } else {
     cli::cli_inform(c(
       "i" = "Testing only tests that failed last time: ",
@@ -79,16 +83,20 @@ lazytest_local <- function(path = ".",
 
   failed_contexts <- context_name(failed_files)
 
-  if (length(failed_contexts) > 0) {
-    brio::write_lines(failed_contexts, CONTEXT_FILE_NAME)
-    if (identical(failed_contexts, contexts)) {
+  missed_contexts <- setdiff(contexts, result_df$context)
+
+  retry_contexts <- c(failed_contexts, missed_contexts)
+
+  if (length(retry_contexts) > 0) {
+    brio::write_lines(retry_contexts, CONTEXT_FILE_NAME)
+    if (identical(retry_contexts, contexts)) {
       cli::cli_inform(c(
         ">" = "Repeating the same tests next time."
       ))
     } else {
       cli::cli_inform(c(
         ">" = "Testing the following tests next time: ",
-        set_names(failed_contexts, "*")
+        set_names(retry_contexts, "*")
       ))
     }
   } else if (has_context) {
