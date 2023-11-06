@@ -6,10 +6,10 @@ passing_test_lines <- function() {
   )
 }
 
-failing_test_lines <- function() {
+failing_test_lines <- function(n = 1) {
   c(
     'test_that("blop() works", {',
-    'expect_equal(2 * 2, 42)',
+    rep('  expect_equal(2 * 2, 42)', n),
     '})'
   )
 }
