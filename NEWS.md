@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9057 (2023-11-07)
+
+## Bug fixes
+
+- Fix parallel runs, regression introduced in #31 (#32).
+
+
 # lazytest 0.0.0.9056 (2023-11-07)
 
 ## Bug fixes
