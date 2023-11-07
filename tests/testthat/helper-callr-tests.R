@@ -1,14 +1,15 @@
 # convoluted way to run the tests
 # without their results being reported for the calling test file
-run_lazytest <- function(pkg_dir, lazytest_dir) {
+run_lazytest <- function(pkg_dir, lazytest_dir, parallel = FALSE) {
   withr::with_dir(pkg_dir, {
     process <- callr::r_bg(
-      function(lazytest_dir) {
+      function(lazytest_dir, parallel) {
         pkgload::load_all(lazytest_dir)
+        Sys.setenv(TESTTHAT_PARALLEL = parallel)
         testthat_results <- lazytest::lazytest_local(stop_on_failure = FALSE)
         return(testthat_results)
       },
-      args = list(lazytest_dir = lazytest_dir),
+      args = list(lazytest_dir = lazytest_dir, parallel = parallel),
       stderr = file.path(pkg_dir, "lazytest-msg") # catching lazytest messages
     )
     process$wait()

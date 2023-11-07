@@ -78,12 +78,10 @@ lazytest_local <- function(
   result_df <- as.data.frame.testthat_results(out)
 
   passed_idx <- result_df$failed == 0 & !result_df$error
-
   failed_files <- unique(result_df$file[!passed_idx])
-
   failed_contexts <- context_name(failed_files)
 
-  missed_contexts <- setdiff(contexts, result_df$context)
+  missed_contexts <- setdiff(contexts, context_name(unique(result_df$file)))
 
   retry_contexts <- c(failed_contexts, missed_contexts)
 
