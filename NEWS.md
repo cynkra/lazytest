@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9056 (2023-11-07)
+
+## Bug fixes
+
+- Retry all tests that haven't been run at all, e.g., due to a limit (#30, #31).
+
+## Chore
+
+- Add Aviator configuration.
+
+
 # lazytest 0.0.0.9055 (2023-10-31)
 
 ## Testing
