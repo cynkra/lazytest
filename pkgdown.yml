@@ -1,9 +1,8 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7.9000
-pkgdown_sha: ab96d2fa60be7a6e54eb8132b572688eadc41be3
+pandoc: 3.1.11
+pkgdown: 2.0.9.9000
+pkgdown_sha: 34ee692e4ce10c8abfb863cc782da771838558f7
 articles: {}
-last_built: 2023-11-07T06:55Z
+last_built: 2024-06-27T06:17Z
 urls:
   reference: https://lazytest.cynkra.com/reference
   article: https://lazytest.cynkra.com/articles
-
