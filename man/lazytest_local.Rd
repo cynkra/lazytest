@@ -119,6 +119,7 @@ and then run the tests,
 #> v |          1 | blip
 #> 
 #> / |          0 | blop                                                           
+#> - | 1        0 | blop                                                           
 #> x | 1        0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
