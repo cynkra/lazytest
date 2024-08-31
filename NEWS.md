@@ -1,5 +1,64 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9060 (2024-08-31)
+
+## Chore
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/cynkra/lazytest/actions/runs/10425483393
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/cynkra/lazytest/actions/runs/10200109676
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/cynkra/lazytest/actions/runs/9730685037
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/cynkra/lazytest/actions/runs/9727974094
+
+  - Auto-update from GitHub Actions.
+    
+    Run: https://github.com/cynkra/lazytest/actions/runs/9691614439
+
+## Continuous integration
+
+  - Install local package for pkgdown builds.
+
+  - Improve support for protected branches with fledge.
+
+  - Improve support for protected branches, without fledge.
+
+  - Sync with latest developments.
+
+  - Use v2 instead of master.
+
+  - Inline action.
+
+  - Use dev roxygen2 and decor.
+
+  - Fix on Windows, tweak lock workflow.
+
+  - Fix on Windows.
+
+  - Avoid checking bashisms on Windows.
+
+  - Better commit message.
+
+  - Bump versions, better default, consume custom matrix.
+
+  - Recent updates.
+
+## Documentation
+
+  - Set BS version explicitly for now.
+    
+    https://github.com/cynkra/cynkratemplate/issues/53
+
+
 # lazytest 0.0.0.9059 (2024-01-24)
 
 - Internal changes only.
