@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9061 (2024-09-15)
+
+## Continuous integration
+
+  - Install via R CMD INSTALL ., not pak (#35).
+    
+      - ci: Install via R CMD INSTALL ., not pak
+    
+      - ci: Bump version of upload-artifact action
+
+
 # lazytest 0.0.0.9060 (2024-08-31)
 
 ## Chore
