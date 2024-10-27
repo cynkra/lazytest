@@ -72,6 +72,7 @@ usethis::with_project(path = pkg_dir, \{
   usethis::use_test("blop")
   usethis::use_test("blip")
 \})
+
 }\if{html}{\out{</div>}}
 
 If we run the tests, they all pass.
@@ -104,6 +105,7 @@ Now if we replace one of the tests with a failing test,
   ),
   path = file.path(pkg_dir, "tests", "testthat", "test-blop.R")
 )
+
 }\if{html}{\out{</div>}}
 
 and then run the tests,
