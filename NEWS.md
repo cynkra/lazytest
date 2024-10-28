@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9062 (2024-10-28)
+
+## Continuous integration
+
+  - Trigger run (#37).
+
+  - Use pkgdown branch (#36).
+
+
 # lazytest 0.0.0.9061 (2024-09-15)
 
 ## Continuous integration
