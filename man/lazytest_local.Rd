@@ -127,8 +127,8 @@ and then run the tests,
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
@@ -136,8 +136,8 @@ and then run the tests,
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
@@ -167,8 +167,8 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
@@ -176,8 +176,8 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
 #> > Repeating the same tests next time.
