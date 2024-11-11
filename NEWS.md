@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9063 (2024-11-11)
+
+## Continuous integration
+
+  - Trigger run (#38).
+    
+      - ci: Trigger run
+    
+      - ci: Latest changes
+
+
 # lazytest 0.0.0.9062 (2024-10-28)
 
 ## Continuous integration
