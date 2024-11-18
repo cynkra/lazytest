@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9064 (2024-11-18)
+
+## Continuous integration
+
+  - Use stable pak (#39).
+
+
 # lazytest 0.0.0.9063 (2024-11-11)
 
 ## Continuous integration
