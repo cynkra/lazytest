@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9065 (2024-11-22)
+
+## Continuous integration
+
+  - Correctly detect branch protection (#40).
+
+
 # lazytest 0.0.0.9064 (2024-11-18)
 
 ## Continuous integration
