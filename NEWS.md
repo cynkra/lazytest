@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9067 (2024-11-26)
+
+## Continuous integration
+
+- Use styler from main branch (#44).
+
+
 # lazytest 0.0.0.9066 (2024-11-25)
 
 ## Continuous integration
