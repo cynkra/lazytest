@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9070 (2024-12-07)
+
+## Continuous integration
+
+- Use larger retry count for lock-threads workflow (#47).
+
+
 # lazytest 0.0.0.9069 (2024-11-28)
 
 ## Continuous integration
