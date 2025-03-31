@@ -71,6 +71,7 @@ usethis::with_project(path = pkg_dir, \{
   usethis::use_test("blop")
   usethis::use_test("blip")
 \})
+
 }\if{html}{\out{</div>}}
 
 If we run the tests, they all pass.
@@ -80,16 +81,25 @@ If we run the tests, they all pass.
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
-#> v | F W S  OK | Context
 #> 
-#> / |         0 | blip                                                            
-#> v |         1 | blip
+#> Attaching package: 'testthat'
 #> 
-#> / |         0 | blop                                                            
-#> v |         1 | blop
+#> 
+#> The following object is masked from 'package:devtools':
+#> 
+#>     test_file
+#> v | F W  S  OK | Context
+#> 
+#> / |          0 | blip                                                           
+#> v |          1 | blip
+#> 
+#> / |          0 | blop                                                           
+#> v |          1 | blop
 #> 
 #> == Results =====================================================================
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
+#> 
+#> Way to go!
 #> > Testing all tests next time.
 }\if{html}{\out{</div>}}
 
@@ -103,6 +113,7 @@ Now if we replace one of the tests with a failing test,
   ),
   path = file.path(pkg_dir, "tests", "testthat", "test-blop.R")
 )
+
 }\if{html}{\out{</div>}}
 
 and then run the tests,
@@ -112,24 +123,29 @@ and then run the tests,
   lazytest::lazytest_local()
 )
 #> i Testing all tests.
-#> v | F W S  OK | Context
+#> v | F W  S  OK | Context
 #> 
-#> / |         0 | blip                                                            
-#> v |         1 | blip
+#> / |          0 | blip                                                           
+#> v |          1 | blip
 #> 
-#> / |         0 | blop                                                            
-#> - | 1       0 | blop                                                            
-#> x | 1       0 | blop [0.2s]
+#> / |          0 | blop                                                           
+#> - | 1        0 | blop                                                           
+#> x | 1        0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
-#> Duration: 0.2 s
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
@@ -151,19 +167,26 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 )
 #> i Testing only tests that failed last time:
 #> * blop
-#> v | F W S  OK | Context
+#> v | F W  S  OK | Context
 #> 
-#> / |         0 | blop                                                            
-#> x | 1       0 | blop
+#> / |          0 | blop                                                           
+#> x | 1        0 | blop
 #> --------------------------------------------------------------------------------
 #> Failure ('test-blop.R:2:1'): blop() works
 #> 2 * 2 (`actual`) not equal to 42 (`expected`).
 #> 
-#>   `actual`:  4
-#> `expected`: 42
+#>   `actual`:  4.0
+#> `expected`: 42.0
 #> --------------------------------------------------------------------------------
 #> 
 #> == Results =====================================================================
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> 2 * 2 (`actual`) not equal to 42 (`expected`).
+#> 
+#>   `actual`:  4.0
+#> `expected`: 42.0
+#> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
 #> > Repeating the same tests next time.
 #> Error: Test failures
