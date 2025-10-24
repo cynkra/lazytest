@@ -34,11 +34,12 @@ lazytest_local <- function(
   }
 
   CONTEXT_FILE_NAME <- ".lazytest"
+  CONTEXT_FILE_NAME_OLD <- ".lazytest.old"
 
   has_context <- fs::file_exists(CONTEXT_FILE_NAME)
   if (has_context) {
     contexts <- brio::read_lines(CONTEXT_FILE_NAME)
-    fs::file_delete(CONTEXT_FILE_NAME)
+    fs::file_move(CONTEXT_FILE_NAME, CONTEXT_FILE_NAME_OLD)
   }
 
   if (!has_context || lazytest_reset) {
@@ -94,6 +95,10 @@ lazytest_local <- function(
 
   if (length(retry_contexts) > 0) {
     brio::write_lines(retry_contexts, CONTEXT_FILE_NAME)
+    if (has_context) {
+      fs::file_delete(CONTEXT_FILE_NAME_OLD)
+    }
+
     if (identical(retry_contexts, contexts)) {
       cli::cli_inform(c(
         ">" = "Repeating the same tests next time."
