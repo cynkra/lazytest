@@ -14,7 +14,7 @@ test_that("lazytest_local() works if all tests are successful", {
     usethis::use_test("blip")
   })
   edit_test("blop", passing_test_lines(), pkg_dir = pkg_dir)
-  edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
+  edit_test("blip", failing_test_lines(), pkg_dir = pkg_dir)
 
   # run tests, including one failing test, twice ----
   first_run <- run_lazytest(
@@ -23,11 +23,14 @@ test_that("lazytest_local() works if all tests are successful", {
     parallel = TRUE
   )
 
-  expect_false(file.exists(file.path(pkg_dir, ".lazytest")))
+  expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
+  # expect_snapshot_file didn't record anything?!
   expect_equal(
-    sort(executed_test_files(first_run)),
-    c("test-blip.R", "test-blop.R")
+    brio::read_lines(file.path(pkg_dir, ".lazytest")),
+    "blip"
   )
+
+  edit_test("blip", passing_test_lines(), pkg_dir = pkg_dir)
 
   second_run <- run_lazytest(
     pkg_dir = pkg_dir,
@@ -36,6 +39,16 @@ test_that("lazytest_local() works if all tests are successful", {
   )
   expect_equal(
     sort(executed_test_files(second_run)),
+    c("test-blip.R", "test-blop.R")
+  )
+
+  third_run <- run_lazytest(
+    pkg_dir = pkg_dir,
+    lazytest_dir = lazytest_dir(),
+    parallel = TRUE
+  )
+  expect_equal(
+    sort(executed_test_files(third_run)),
     c("test-blip.R", "test-blop.R")
   )
 })
