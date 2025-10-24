@@ -21,5 +21,5 @@ lazytest_dir <- function() {
 }
 
 executed_test_files <- function(callr_output) {
-  as.data.frame.testthat_results(callr_output$get_result())[,1]
+  as.data.frame.testthat_results(callr_output$get_result())[, 1]
 }

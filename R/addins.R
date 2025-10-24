@@ -24,6 +24,11 @@ run_lazytests_reset <- function() {
   if (nice != "") {
     nice <- paste0("'", nice, "' ")
   }
-  cmd <- paste0(nice, rscript, "-e '", "lazytest::lazytest_local(lazytest_reset = TRUE)'")
+  cmd <- paste0(
+    nice,
+    rscript,
+    "-e '",
+    "lazytest::lazytest_local(lazytest_reset = TRUE)'"
+  )
   rstudioapi::terminalExecute(cmd)
 }

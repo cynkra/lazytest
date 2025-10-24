@@ -50,7 +50,7 @@ test_that("lazytest_local() works", {
   expect_match(
     toString(brio::read_lines(file.path(pkg_dir, "lazytest-msg"))),
     "Testing all tests next time"
-    )
+  )
 
   last_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_false(file.exists(file.path(pkg_dir, ".lazytest")))

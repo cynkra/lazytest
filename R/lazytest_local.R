@@ -16,21 +16,26 @@
 #' ```
 #' @export
 lazytest_local <- function(
-    path = ".",
-    reporter = NULL,
-    ...,
-    lazytest_reset = FALSE,
-    stop_on_failure = TRUE,
-    stop_on_warning = FALSE,
-    filter = NULL,
-    load_package = "source") {
-#
+  path = ".",
+  reporter = NULL,
+  ...,
+  lazytest_reset = FALSE,
+  stop_on_failure = TRUE,
+  stop_on_warning = FALSE,
+  filter = NULL,
+  load_package = "source"
+) {
+  #
   if (!identical(path, ".")) {
-    cli::cli_abort('{.code lazytest_local()} currently only works with {.code path = "."}.') # nolint
+    cli::cli_abort(
+      '{.code lazytest_local()} currently only works with {.code path = "."}.'
+    ) # nolint
   }
 
   if (!is.null(filter)) {
-    cli::cli_abort("{.code lazytest_local()} requires {.code filter = NULL}, use {.code testthat::test_local()} to pass a {.code filter} argument.") # nolint
+    cli::cli_abort(
+      "{.code lazytest_local()} requires {.code filter = NULL}, use {.code testthat::test_local()} to pass a {.code filter} argument."
+    ) # nolint
   }
 
   CONTEXT_FILE_NAME <- ".lazytest"
@@ -52,7 +57,11 @@ lazytest_local <- function(
     ))
 
     rx <- "^test-(.*)\\.[Rr]$"
-    contexts <- context_name(dir("tests/testthat", pattern = rx, full.names = FALSE))
+    contexts <- context_name(dir(
+      "tests/testthat",
+      pattern = rx,
+      full.names = FALSE
+    ))
   } else {
     cli::cli_inform(c(
       "i" = "Testing only tests that failed last time: ",
