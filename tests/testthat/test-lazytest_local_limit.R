@@ -23,11 +23,11 @@ test_that("lazytest_local() works", {
   # expect_snapshot_file didn't record anything?!
   expect_equal(
     brio::read_lines(file.path(pkg_dir, ".lazytest")),
-    c("blip", "blop")
+    "blip"
   )
   expect_equal(
     executed_test_files(first_run),
-    c("test-blip.R")
+    c("test-blip.R", "test-blop.R")
   )
 
   second_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
