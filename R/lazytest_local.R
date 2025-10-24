@@ -83,7 +83,14 @@ lazytest_local <- function(
 
   missed_contexts <- setdiff(contexts, context_name(unique(result_df$file)))
 
-  retry_contexts <- c(failed_contexts, missed_contexts)
+  if (length(failed_contexts) == 0 && identical(missed_contexts, contexts)) {
+    cli::cli_inform(c(
+      ">" = "No tests run."
+    ))
+    retry_contexts <- character()
+  } else {
+    retry_contexts <- c(failed_contexts, missed_contexts)
+  }
 
   if (length(retry_contexts) > 0) {
     brio::write_lines(retry_contexts, CONTEXT_FILE_NAME)
