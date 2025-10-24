@@ -93,9 +93,9 @@ lazytest_local <- function(
 
   missed_contexts <- setdiff(contexts, context_name(unique(result_df$file)))
 
-  if (length(failed_contexts) == 0 && identical(missed_contexts, contexts)) {
+  if (length(failed_contexts) == 0) {
     cli::cli_inform(c(
-      ">" = "No tests run."
+      "v" = "All tests passed."
     ))
     retry_contexts <- character()
   } else {
