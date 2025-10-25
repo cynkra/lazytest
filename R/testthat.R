@@ -24,6 +24,7 @@ any_warnings_df <- function(df) {
   any(df$warning > 0)
 }
 
+#' @export
 as.data.frame.testthat_results <- function(x, ...) {
   if (length(x) == 0) {
     return(
