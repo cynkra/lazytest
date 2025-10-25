@@ -4,7 +4,8 @@ Version: 0.0.0.9072
 Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
-    person("cynkra GmbH", , , "mail@cynkra.com", role = c("fnd", "cph"))
+    person("cynkra GmbH", , , "mail@cynkra.com", role = c("fnd", "cph"),
+           comment = c(ROR = "0335t7e62"))
   )
 Description: A companion package to the testthat package that saves
     development time by helping you rerun only the tests that have failed
