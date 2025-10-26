@@ -1,5 +1,68 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9073 (2025-10-26)
+
+## Features
+
+- Ignore test files without checks if all tests were successful.
+
+- Stash away context before removing it.
+
+- Don't retry empty tests if all others are successful.
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/cynkra/lazytest/actions/runs/18800716937
+
+- Add explicit S3 method.
+
+- Document.
+
+- Format with air.
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/cynkra/lazytest/actions/runs/17450846109
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/cynkra/lazytest/actions/runs/14636208510
+
+## Continuous integration
+
+- Use reviewdog for external PRs (#62).
+
+- Cleanup and fix macOS (#61).
+
+- Format with air, check detritus, better handling of `extra-packages` (#60).
+
+- Enhance permissions for workflow (#59).
+
+- Permissions, better tests for missing suggests, lints (#58).
+
+- Only fail covr builds if token is given (#57).
+
+- Always use `_R_CHECK_FORCE_SUGGESTS_=false` (#56).
+
+- Correct installation of xml2 (#55).
+
+- Explain (#54).
+
+- Add xml2 for covr, print testthat results (#53).
+
+- Fix (#52).
+
+- Sync (#51).
+
+## Testing
+
+- Strengthen parallel test.
+
+- Fix test.
+
+
 # lazytest 0.0.0.9072 (2024-12-09)
 
 ## Continuous integration
