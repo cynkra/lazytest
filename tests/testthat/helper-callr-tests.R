@@ -8,6 +8,7 @@ run_lazytest <- function(pkg_dir, lazytest_dir, parallel = FALSE) {
           pkgload::load_all(lazytest_dir)
         }
         Sys.setenv(TESTTHAT_PARALLEL = parallel)
+        Sys.unsetenv("TESTTHAT_MAX_FAILS")
         testthat_results <- lazytest::lazytest_local(stop_on_failure = FALSE)
         return(testthat_results)
       },

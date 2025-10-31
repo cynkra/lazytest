@@ -20,15 +20,12 @@ test_that("lazytest_local() works", {
   first_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
 
   expect_true(file.exists(file.path(pkg_dir, ".lazytest")))
-  # expect_snapshot_file didn't record anything?!
   expect_equal(
     brio::read_lines(file.path(pkg_dir, ".lazytest")),
-    "blip"
+    c("blip", "blop")
   )
-  expect_equal(
-    executed_test_files(first_run),
-    c("test-blip.R", "test-blop.R")
-  )
+  # Only one file thanks to the limit
+  expect_equal(executed_test_files(first_run), "test-blip.R")
 
   second_run <- run_lazytest(pkg_dir = pkg_dir, lazytest_dir = lazytest_dir())
   expect_equal(
