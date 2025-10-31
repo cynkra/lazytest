@@ -11,7 +11,11 @@ run_lazytest <- function(pkg_dir, lazytest_dir, parallel = FALSE) {
         testthat_results <- lazytest::lazytest_local(stop_on_failure = FALSE)
         return(testthat_results)
       },
-      args = list(lazytest_dir = lazytest_dir, parallel = parallel, checking = testthat::is_checking()),
+      args = list(
+        lazytest_dir = lazytest_dir,
+        parallel = parallel,
+        checking = testthat::is_checking()
+      ),
       stderr = file.path(pkg_dir, "lazytest-msg") # catching lazytest messages
     )
     process$wait()
