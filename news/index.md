@@ -1,5 +1,20 @@
 # Changelog
 
+## lazytest 0.0.0.9074 (2025-11-01)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/18974497249>
+
+### Testing
+
+- Remove sensitivity `TESTTHAT_MAX_FAILS`.
+
+- Avoid
+  [`pkgload::load_all()`](https://pkgload.r-lib.org/reference/load_all.html).
+
 ## lazytest 0.0.0.9073 (2025-10-26)
 
 ### Features
