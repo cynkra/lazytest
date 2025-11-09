@@ -1,5 +1,11 @@
 # Changelog
 
+## lazytest 0.0.0.9075 (2025-11-08)
+
+### Continuous integration
+
+- Sync ([\#63](https://github.com/cynkra/lazytest/issues/63)).
+
 ## lazytest 0.0.0.9074 (2025-11-01)
 
 ### Chore
