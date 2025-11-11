@@ -1,5 +1,12 @@
 # Changelog
 
+## lazytest 0.0.0.9076 (2025-11-10)
+
+### Continuous integration
+
+- Use workflows for fledge
+  ([\#64](https://github.com/cynkra/lazytest/issues/64)).
+
 ## lazytest 0.0.0.9075 (2025-11-08)
 
 ### Continuous integration
