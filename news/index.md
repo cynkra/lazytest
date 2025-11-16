@@ -1,5 +1,12 @@
 # Changelog
 
+## lazytest 0.0.0.9077 (2025-11-12)
+
+### Continuous integration
+
+- Fix reviewdog and add commenting workflow
+  ([\#65](https://github.com/cynkra/lazytest/issues/65)).
+
 ## lazytest 0.0.0.9076 (2025-11-10)
 
 ### Continuous integration
