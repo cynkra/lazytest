@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9078 (2025-11-17)
+
+## Continuous integration
+
+- Install binaries from r-universe for dev workflow (#66).
+
+
 # lazytest 0.0.0.9077 (2025-11-12)
 
 ## Continuous integration
