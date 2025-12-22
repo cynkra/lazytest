@@ -145,7 +145,8 @@ and then run the tests,
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]
 #> > Testing the following tests next time:
 #> * blop
-#> Error: Test failures
+#> Error:
+#> ! Test failures
 }\if{html}{\out{</div>}}
 
 a file is created with the failing test name:
@@ -186,7 +187,8 @@ Next time we run the tests, only this test will be run, until it is fixed at whi
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]
 #> > Repeating the same tests next time.
-#> Error: Test failures
+#> Error:
+#> ! Test failures
 }\if{html}{\out{</div>}}
 }
 
