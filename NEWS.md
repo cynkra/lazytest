@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9081 (2026-01-14)
+
+## Continuous integration
+
+- Fix comment (#69).
+
+- Tweaks (#68).
+
+- Test all R versions on branches that start with cran- (#67).
+
+
 # lazytest 0.0.0.9080 (2025-12-23)
 
 ## Chore
