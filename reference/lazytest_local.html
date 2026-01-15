@@ -9,7 +9,7 @@ only the tests that failed last time."><script defer data-domain="lazytest.cynkr
     <a href="https://cynkra.com" class="external-link logo-cynkra"><img src="https://cynkra.com/assets/img/logo-cynkra-square.svg" alt="cynkra" width="100" height="100"><div class="sr-only">cynkra</div></a>
     <a class="navbar-brand me-2" href="../index.html">lazytest</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9077</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9081</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,24 +169,27 @@ like <code><a href="https://testthat.r-lib.org/reference/test_package.html" clas
 <span><span class="co">#&gt; x | 1        0 | blop</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
-<span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="co">#&gt;</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
 <span><span class="co">#&gt;   `actual`:  4.0</span></span>
 <span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
 <span><span class="co">#&gt; -- Failed tests ----------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
-<span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="co">#&gt;</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
 <span><span class="co">#&gt;   `actual`:  4.0</span></span>
 <span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
 <span><span class="co">#&gt; &gt; Testing the following tests next time:</span></span>
 <span><span class="co">#&gt; * blop</span></span>
-<span><span class="co">#&gt; Error: Test failures</span></span></code></pre><p></p></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Test failures</span></span></code></pre><p></p></div>
 <p>a file is created with the failing test name:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu">brio</span><span class="fu">::</span><span class="fu"><a href="https://brio.r-lib.org/reference/read_lines.html" class="external-link">read_lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pkg_dir</span>, <span class="st">".lazytest"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "blop"</span></span></code></pre><p></p></div>
@@ -203,23 +206,26 @@ like <code><a href="https://testthat.r-lib.org/reference/test_package.html" clas
 <span><span class="co">#&gt; x | 1        0 | blop</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
-<span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="co">#&gt;</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
 <span><span class="co">#&gt;   `actual`:  4.0</span></span>
 <span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; == Results =====================================================================</span></span>
 <span><span class="co">#&gt; -- Failed tests ----------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
-<span><span class="co">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="co">#&gt;</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
 <span><span class="co">#&gt;   `actual`:  4.0</span></span>
 <span><span class="co">#&gt; `expected`: 42.0</span></span>
 <span><span class="co">#&gt;</span></span>
+<span><span class="co">#&gt;</span></span>
 <span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]</span></span>
 <span><span class="co">#&gt; &gt; Repeating the same tests next time.</span></span>
-<span><span class="co">#&gt; Error: Test failures</span></span></code></pre><p></p></div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Test failures</span></span></code></pre><p></p></div>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

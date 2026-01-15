@@ -1,5 +1,39 @@
 # Changelog
 
+## lazytest 0.0.0.9081 (2026-01-14)
+
+### Continuous integration
+
+- Fix comment ([\#69](https://github.com/cynkra/lazytest/issues/69)).
+
+- Tweaks ([\#68](https://github.com/cynkra/lazytest/issues/68)).
+
+- Test all R versions on branches that start with cran-
+  ([\#67](https://github.com/cynkra/lazytest/issues/67)).
+
+## lazytest 0.0.0.9080 (2025-12-23)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/20419309207>
+
+## lazytest 0.0.0.9079 (2025-11-19)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/19451040212>
+
+## lazytest 0.0.0.9078 (2025-11-17)
+
+### Continuous integration
+
+- Install binaries from r-universe for dev workflow
+  ([\#66](https://github.com/cynkra/lazytest/issues/66)).
+
 ## lazytest 0.0.0.9077 (2025-11-12)
 
 ### Continuous integration
