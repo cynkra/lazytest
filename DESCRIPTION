@@ -19,7 +19,7 @@ Imports:
     fs,
     rex,
     rlang,
-    testthat (>= 3.2.0)
+    testthat (>= 3.3.2)
 Suggests: 
     callr,
     here,

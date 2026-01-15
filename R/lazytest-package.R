@@ -5,7 +5,6 @@
 #' @importFrom rlang abort
 #' @importFrom rlang inform
 #' @importFrom rlang set_names
-#' @importFrom testthat default_parallel_reporter
 #' @importFrom testthat default_reporter
 #' @importFrom testthat is.expectation
 #' @importFrom testthat ListReporter
