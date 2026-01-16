@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9082 (2026-01-16)
+
+## Chore
+
+- Adapt to updated testthat.
+
+
 # lazytest 0.0.0.9081 (2026-01-14)
 
 ## Continuous integration
