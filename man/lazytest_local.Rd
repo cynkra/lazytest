@@ -50,7 +50,7 @@ field in your DESCRIPTION file:
 }
 \value{
 A list (invisibly) containing data about the test results,
-like \code{\link[testthat:test_package]{testthat::test_local()}}.
+like \code{\link[testthat:test_local]{testthat::test_local()}}.
 }
 \description{
 A drop-in replacement for \code{testthat::test_local()} that by default reruns
