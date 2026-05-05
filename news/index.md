@@ -1,5 +1,35 @@
 # Changelog
 
+## lazytest 0.0.0.9085 (2026-05-04)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/25267064366>
+
+## lazytest 0.0.0.9084 (2026-03-12)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/22932737294>
+
+## lazytest 0.0.0.9083 (2026-03-08)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/22789331737>
+
+## lazytest 0.0.0.9082 (2026-01-16)
+
+### Chore
+
+- Adapt to updated testthat.
+
 ## lazytest 0.0.0.9081 (2026-01-14)
 
 ### Continuous integration

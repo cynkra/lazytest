@@ -1,6 +1,7 @@
 # lazytest
 
 ``` chroma
+
 library(lazytest)
 ```
 
@@ -27,6 +28,7 @@ instead of
 or [`devtools::test()`](https://devtools.r-lib.org/reference/test.html):
 
 ``` chroma
+
 lazytest::lazytest_local()
 ```
 
@@ -40,6 +42,7 @@ and there seems to be no way to customize it or hook into it.
 Let’s create a package with two boilerplate tests.
 
 ``` chroma
+
 withr::local_options(usethis.quiet = TRUE)
 
 pkg_parent_dir <- withr::local_tempdir()
@@ -55,6 +58,7 @@ usethis::with_project(path = pkg_dir, {
 If we run the tests, they all pass.
 
 ``` chroma
+
 withr::with_dir(
   pkg_dir,
   lazytest::lazytest_local()
@@ -72,6 +76,7 @@ withr::with_dir(
 Now if we replace one of the tests with a failing test,
 
 ``` chroma
+
 brio::write_lines(
   text =  c(
     'test_that("blop() works", {',
@@ -85,6 +90,7 @@ brio::write_lines(
 and then run the tests,
 
 ``` chroma
+
 withr::with_dir(
   pkg_dir,
   lazytest::lazytest_local()
@@ -113,6 +119,7 @@ withr::with_dir(
 a file is created with the failing test name:
 
 ``` chroma
+
 brio::read_lines(file.path(pkg_dir, ".lazytest"))
 #> [1] "blop"
 ```
@@ -122,6 +129,7 @@ fixed at which point all tests are run again to check no failure has
 been introduced elsewhere.
 
 ``` chroma
+
 withr::with_dir(
   pkg_dir,
   lazytest::lazytest_local()
@@ -173,12 +181,14 @@ You can install the development version of lazytest from [cynkra
 R-universe](https://cynkra.r-universe.dev/):
 
 ``` chroma
+
 install.packages('lazytest', repos = c('https://cynkra.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 Or from GitHub:
 
 ``` chroma
+
 pak::pak("krlmlr/lazytest")
 ```
 
