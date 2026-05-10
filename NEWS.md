@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9087 (2026-05-10)
+
+## Continuous integration
+
+- Tweak fledge workflow and ccache action.
+
+
 # lazytest 0.0.0.9086 (2026-05-06)
 
 ## Continuous integration
