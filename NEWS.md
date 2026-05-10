@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9088 (2026-05-10)
+
+## Continuous integration
+
+- Only run fledge on pushes to main.
+
+
 # lazytest 0.0.0.9087 (2026-05-10)
 
 ## Continuous integration
