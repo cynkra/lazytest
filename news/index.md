@@ -1,5 +1,31 @@
 # Changelog
 
+## lazytest 0.0.0.9088 (2026-05-10)
+
+### Continuous integration
+
+- Only run fledge on pushes to main.
+
+## lazytest 0.0.0.9087 (2026-05-10)
+
+### Continuous integration
+
+- Tweak fledge workflow and ccache action.
+
+## lazytest 0.0.0.9086 (2026-05-06)
+
+### Continuous integration
+
+- Cosmetics.
+
+- Bump action versions.
+
+- Install clang-format-21.
+
+- Align fledge workflow.
+
+- Harmonize.
+
 ## lazytest 0.0.0.9085 (2026-05-04)
 
 ### Chore
