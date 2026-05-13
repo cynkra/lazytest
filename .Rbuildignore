@@ -10,3 +10,4 @@
 ^pkgdown$
 ^\.aviator/config\.yml$
 ^air\.toml$
+^\.ccache$
