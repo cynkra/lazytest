@@ -15,12 +15,12 @@ Source:
 [`DESCRIPTION`](https://github.com/cynkra/lazytest/blob/main/DESCRIPTION)
 
 Müller K (2026). *lazytest: Runs Only Failed Tests*. R package version
-0.0.0.9088, <https://github.com/cynkra/lazytest>.
+0.0.0.9089, <https://github.com/cynkra/lazytest>.
 
     @Manual{,
       title = {lazytest: Runs Only Failed Tests},
       author = {Kirill Müller},
       year = {2026},
-      note = {R package version 0.0.0.9088},
+      note = {R package version 0.0.0.9089},
       url = {https://github.com/cynkra/lazytest},
     }
