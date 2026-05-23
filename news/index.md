@@ -1,5 +1,10 @@
 # Changelog
 
+## lazytest 0.0.0.9090 (2026-05-16)
+
+- Ci: Unify fledge.yaml across cynkratemplate and fledge
+  ([\#86](https://github.com/cynkra/lazytest/issues/86)).
+
 ## lazytest 0.0.0.9089 (2026-05-14)
 
 ### Chore
