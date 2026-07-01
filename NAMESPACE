@@ -2,11 +2,15 @@
 
 S3method(as.data.frame,testthat_results)
 export(lazytest_local)
-importFrom(rlang,abort)
-importFrom(rlang,inform)
-importFrom(rlang,set_names)
-importFrom(testthat,ListReporter)
-importFrom(testthat,MultiReporter)
-importFrom(testthat,default_reporter)
-importFrom(testthat,is.expectation)
-importFrom(testthat,test_local)
+importFrom(rlang,
+  abort,
+  inform,
+  set_names
+)
+importFrom(testthat,
+  ListReporter,
+  MultiReporter,
+  default_reporter,
+  is.expectation,
+  test_local
+)
