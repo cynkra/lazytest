@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9096 (2026-07-28)
+
+- Ci: Run all smoke-test checks even when one fails (#97).
+
+- Ci: Apply matrix `env` vars in the workflow, not in custom actions (#95).
+
+- Ci: Link the responsible workflow run in snapshot update PRs (#96).
+
+
 # lazytest 0.0.0.9095 (2026-07-25)
 
 ## Continuous integration
