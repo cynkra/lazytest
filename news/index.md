@@ -1,5 +1,16 @@
 # Changelog
 
+## lazytest 0.0.0.9096 (2026-07-28)
+
+- Ci: Run all smoke-test checks even when one fails
+  ([\#97](https://github.com/cynkra/lazytest/issues/97)).
+
+- Ci: Apply matrix `env` vars in the workflow, not in custom actions
+  ([\#95](https://github.com/cynkra/lazytest/issues/95)).
+
+- Ci: Link the responsible workflow run in snapshot update PRs
+  ([\#96](https://github.com/cynkra/lazytest/issues/96)).
+
 ## lazytest 0.0.0.9095 (2026-07-25)
 
 ### Continuous integration
