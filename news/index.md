@@ -1,5 +1,28 @@
 # Changelog
 
+## lazytest 0.0.0.9097 (2026-08-05)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/30967499319>
+
+### Continuous integration
+
+- Remove unused pr-commands workflow.
+
+### Uncategorized
+
+- Ci: Give every workflow and job an explicit `permissions` block
+  ([\#103](https://github.com/cynkra/lazytest/issues/103)).
+
+- Ci: Pass workflow context through the environment, not into script
+  text ([\#102](https://github.com/cynkra/lazytest/issues/102)).
+
+- Ci: Add a Windows arm64 (`windows-11-arm`) check on R-release
+  ([\#99](https://github.com/cynkra/lazytest/issues/99)).
+
 ## lazytest 0.0.0.9096 (2026-07-28)
 
 - Ci: Run all smoke-test checks even when one fails
