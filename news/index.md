@@ -1,5 +1,19 @@
 # Changelog
 
+## lazytest 0.0.0.9098 (2026-08-06)
+
+### Continuous integration
+
+- Add sharded `revdep2` workflow.
+
+### Uncategorized
+
+- Ci: Harden `workflow_run` workflows against untrusted pull requests
+  ([\#106](https://github.com/cynkra/lazytest/issues/106)).
+
+- Ci: Pin third-party actions to commits and let Renovate keep them
+  pinned ([\#105](https://github.com/cynkra/lazytest/issues/105)).
+
 ## lazytest 0.0.0.9097 (2026-08-05)
 
 ### Chore
