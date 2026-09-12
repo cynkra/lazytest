@@ -1,5 +1,13 @@
 # Changelog
 
+## lazytest 0.0.0.9100 (2026-09-05)
+
+### Bug fixes
+
+#### ci
+
+- Backport kit fixes from `rigraph`, `duckdb-r` and `dm`.
+
 ## lazytest 0.0.0.9099 (2026-08-08)
 
 ### Continuous integration
