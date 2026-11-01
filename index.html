@@ -51,149 +51,188 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="lazytest">lazytest<a class="anchor" aria-label="anchor" href="#lazytest"></a>
+<div class="page-header"><h1 id="lazytest">
+<a href="https://lazytest.cynkra.com/">lazytest</a><a class="anchor" aria-label="anchor" href="#lazytest"></a>
 </h1></div>
 <!-- badges: start -->
 
-<!-- badges: end -->
-<pre class="chroma">
-<span><span class="kr"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="o">(</span><span class="nv"><a href="https://github.com/cynkra/lazytest" class="external-link">lazytest</a></span><span class="o">)</span></span></pre>
-<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> function, a drop-in replacement for <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>, that</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/cynkra/lazytest" class="external-link">lazytest</a></span><span class="op">)</span></span></code></pre></div>
+<p>The goal of lazytest is to save development time by helping you rerun only the tests that have failed during the last run. It integrates tightly with the testthat package and provides the <code><a href="reference/lazytest_local.html">lazytest_local()</a></code> function, a drop-in replacement for <code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code>, that</p>
 <ul>
 <li>memoizes which tests have failed;</li>
 <li>runs only those tests in subsequent runs.</li>
 </ul>
 <p>If all active tests have succeeded, the entire test suite is run in a second pass.</p>
 <div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>The development version of lazytest can be installed from R-universe:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Enable repository from cynkra</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
+<span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    cynkra <span class="op">=</span> <span class="st">"https://cynkra.r-universe.dev"</span>,</span>
+<span>    CRAN <span class="op">=</span> <span class="st">"https://cloud.r-project.org"</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co"># Download and install lazytest in R</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"lazytest"</span><span class="op">)</span></span></code></pre></div>
+<p>or from GitHub:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"cynkra/lazytest"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>Call <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> instead of <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> or <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>:</p>
-<pre class="chroma">
-<span><span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span></pre>
-<p>The package also provides RStudio add-ins that run the tests in a new terminal. Unfortunately, the “Test package” command is hard-wired to <a href="https://devtools.r-lib.org/reference/test.html" class="external-link"><code>devtools::test()</code></a>, and there seems to be no way to customize it or hook into it.</p>
-</div>
-<div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
-</h2>
-<p>Let’s create a package with two boilerplate tests.</p>
-<pre class="chroma">
-<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_options.html" class="external-link">local_options</a></span><span class="o">(</span>usethis.quiet <span class="o">=</span> <span class="kc">TRUE</span><span class="o">)</span></span>
-<span></span>
-<span><span class="nv">pkg_parent_dir</span> <span class="o">&lt;-</span> <span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_tempfile.html" class="external-link">local_tempdir</a></span><span class="o">(</span><span class="o">)</span></span>
-<span><span class="nv">pkg_dir</span> <span class="o">&lt;-</span> <span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_parent_dir</span>, <span class="s">"tea"</span><span class="o">)</span></span>
-<span><span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/create_package.html" class="external-link">create_package</a></span><span class="o">(</span><span class="nv">pkg_dir</span><span class="o">)</span></span>
-<span><span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/proj_utils.html" class="external-link">with_project</a></span><span class="o">(</span>path <span class="o">=</span> <span class="nv">pkg_dir</span>, <span class="o">{</span></span>
-<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_testthat.html" class="external-link">use_testthat</a></span><span class="o">(</span><span class="o">)</span></span>
-<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="o">(</span><span class="s">"blop"</span><span class="o">)</span></span>
-<span>  <span class="nf">usethis</span><span class="nf">::</span><span class="nf"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="o">(</span><span class="s">"blip"</span><span class="o">)</span></span>
-<span><span class="o">}</span><span class="o">)</span></span></pre>
-<p>If we run the tests, they all pass.</p>
-<pre class="chroma">
-<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
-<span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
-<span><span class="o">)</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
-<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
-<span><span class="c">#&gt; ⠏ |         0 | blip                                                            <span style="color: #00BB00;">✔</span> |         1 | blip</span></span>
-<span><span class="c">#&gt; ⠏ |         0 | blop                                                            <span style="color: #00BB00;">✔</span> |         1 | blop</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
-<span><span class="c">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | <span style="color: #00BB00;">PASS</span> 2 ]</span></span>
-<span><span class="c">#&gt; → Testing all tests next time.</span></span></pre>
-<p>Now if we replace one of the tests with a failing test,</p>
-<pre class="chroma">
-<span><span class="nf">brio</span><span class="nf">::</span><span class="nf"><a href="https://brio.r-lib.org/reference/write_lines.html" class="external-link">write_lines</a></span><span class="o">(</span></span>
-<span>  text <span class="o">=</span>  <span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span></span>
-<span>    <span class="s">'test_that("blop() works", {'</span>,</span>
-<span>    <span class="s">'expect_equal(2 * 2, 42)'</span>,</span>
-<span>    <span class="s">'})'</span></span>
-<span>  <span class="o">)</span>,</span>
-<span>  path <span class="o">=</span> <span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_dir</span>, <span class="s">"tests"</span>, <span class="s">"testthat"</span>, <span class="s">"test-blop.R"</span><span class="o">)</span></span>
-<span><span class="o">)</span></span></pre>
-<p>and then run the tests,</p>
-<pre class="chroma">
-<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
-<span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
-<span><span class="o">)</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing all tests.</span></span>
-<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
-<span><span class="c">#&gt; ⠏ |         0 | blip                                                            <span style="color: #00BB00;">✔</span> |         1 | blip</span></span>
-<span><span class="c">#&gt; ⠏ |         0 | blop                                                            ⠋ | 1       0 | blop                                                            <span style="color: #BB0000;">✖</span> | <span style="color: #BBBB00;">1</span>       0 | blop<span style="color: #555555;"> [0.2s]</span></span></span>
-<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
-<span><span class="c">#&gt; <span style="color: #BBBB00; font-weight: bold;">Failure</span><span style="font-weight: bold;"> (</span><span style="color: #0000BB; font-weight: bold;">test-blop.R:2:1</span><span style="font-weight: bold;">): blop() works</span></span></span>
-<span><span class="c">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt;   `actual`:  <span style="color: #00BB00;">4</span></span></span>
-<span><span class="c">#&gt; `expected`: <span style="color: #00BB00;">42</span></span></span>
-<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">Duration: 0.3 s</span></span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; [ <span style="color: #BBBB00;">FAIL</span> 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
-<span><span class="c">#&gt; → Testing the following tests next time:</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">•</span> blop</span></span>
-<span><span class="c">#&gt; Error: Test failures</span></span></pre>
-<p>a file is created with the failing test name:</p>
-<pre class="chroma">
-<span><span class="nf">brio</span><span class="nf">::</span><span class="nf"><a href="https://brio.r-lib.org/reference/read_lines.html" class="external-link">read_lines</a></span><span class="o">(</span><span class="nf"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="o">(</span><span class="nv">pkg_dir</span>, <span class="s">".lazytest"</span><span class="o">)</span><span class="o">)</span></span>
-<span><span class="c">#&gt; [1] "blop"</span></span></pre>
-<p>Next time we run the tests, only this test will be run, until it is fixed at which point all tests are run again to check no failure has been introduced elsewhere.</p>
-<pre class="chroma">
-<span><span class="nf">withr</span><span class="nf">::</span><span class="nf"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="o">(</span></span>
-<span>  <span class="nv">pkg_dir</span>,</span>
-<span>  <span class="nf">lazytest</span><span class="nf">::</span><span class="nf"><a href="https://lazytest.cynkra.com/reference/lazytest_local.html">lazytest_local</a></span><span class="o">(</span><span class="o">)</span></span>
-<span><span class="o">)</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">ℹ</span> Testing only tests that failed last time:</span></span>
-<span><span class="c">#&gt; <span style="color: #00BBBB;">•</span> blop</span></span>
-<span><span class="c">#&gt; <span style="color: #00BB00;">✔</span> | <span style="color: #BBBB00;">F</span> <span style="color: #BB00BB;">W</span> <span style="color: #0000BB;">S</span> <span style="color: #00BB00;"> OK</span> | Context</span></span>
-<span><span class="c">#&gt; ⠏ |         0 | blop                                                            <span style="color: #BB0000;">✖</span> | <span style="color: #BBBB00;">1</span>       0 | blop</span></span>
-<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
-<span><span class="c">#&gt; <span style="color: #BBBB00; font-weight: bold;">Failure</span><span style="font-weight: bold;"> (</span><span style="color: #0000BB; font-weight: bold;">test-blop.R:2:1</span><span style="font-weight: bold;">): blop() works</span></span></span>
-<span><span class="c">#&gt; 2 * 2 (`actual`) not equal to 42 (`expected`).</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt;   `actual`:  <span style="color: #00BB00;">4</span></span></span>
-<span><span class="c">#&gt; `expected`: <span style="color: #00BB00;">42</span></span></span>
-<span><span class="c">#&gt; ────────────────────────────────────────────────────────────────────────────────</span></span>
-<span><span class="c">#&gt; </span></span>
-<span><span class="c">#&gt; ══ <span style="font-weight: bold;">Results</span> ═════════════════════════════════════════════════════════════════════</span></span>
-<span><span class="c">#&gt; [ <span style="color: #BBBB00;">FAIL</span> 1 | WARN 0 | SKIP 0 | PASS 0 ]</span></span>
-<span><span class="c">#&gt; → Repeating the same tests next time.</span></span>
-<span><span class="c">#&gt; Error: Test failures</span></span></pre>
-</div>
-<div class="section level2">
-<h2 id="how-does-it-work">How does it work?<a class="anchor" aria-label="anchor" href="#how-does-it-work"></a>
-</h2>
-<p><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> returns an object from which the tests that have failed can be retrieved. <a href="https://lazytest.cynkra.com/reference/lazytest_local.html"><code>lazytest_local()</code></a> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a>.</p>
-<p>When all tests have passed and not all tests were run, a second call to <a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link"><code>testthat::test_local()</code></a> is initiated, to make sure that no failures have been introduced in the meantime.</p>
-<p>The presence of a <code>.lazytest</code> file in the package source indicates that the last test run has failed somewhere. You should not need to gitignore or Rbuildignore it: you should fix the reason behind the test failure, then run tests again, before committing to your repository’s default branch for instance.</p>
-</div>
-<div class="section level2">
-<h2 id="installation-and-optional-setup">Installation and optional setup<a class="anchor" aria-label="anchor" href="#installation-and-optional-setup"></a>
-</h2>
-<p>You can install the development version of lazytest from <a href="https://cynkra.r-universe.dev/" class="external-link">cynkra R-universe</a>:</p>
-<pre class="chroma">
-<span><span class="nf"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="o">(</span><span class="s">'lazytest'</span>, repos <span class="o">=</span> <span class="nf"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="o">(</span><span class="s">'https://cynkra.r-universe.dev'</span>, <span class="s">'https://cloud.r-project.org'</span><span class="o">)</span><span class="o">)</span></span></pre>
-<p>Or from GitHub:</p>
-<pre class="chroma">
-<span><span class="nf">pak</span><span class="nf">::</span><span class="nf"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="o">(</span><span class="s">"krlmlr/lazytest"</span><span class="o">)</span></span></pre>
+<p>Call <code><a href="reference/lazytest_local.html">lazytest_local()</a></code> instead of <code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code> or <code>devtools::test()</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">lazytest</span><span class="fu">::</span><span class="fu"><a href="reference/lazytest_local.html">lazytest_local</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>The package also provides RStudio add-ins that run the tests in a new terminal. Unfortunately, the “Test package” command is hard-wired to <code>devtools::test()</code>, and there seems to be no way to customize it or hook into it.</p>
 <p>If you’re using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T). The add-in provides two commands:</p>
 <ul>
 <li><p>Run Lazy Tests in New Terminal (recommended mapping: Ctrl + Shift + T / Cmd + Shift + T)</p></li>
 <li><p>Reset And Run Lazy Tests in New Terminal (recommended mapping: Ctrl + T / Cmd + T)</p></li>
 </ul>
 <p>This allows you to keep the workflows you’re accustomed to and to benefit immediately.</p>
-<div class="float">
-<img src="https://github.com/cynkra/lazytest/raw/main/readme/rstudio-kb.png" alt="RStudio shortcut configuration"><div class="figcaption">RStudio shortcut configuration</div>
-</div>
-<hr>
+<figure><img src="https://github.com/cynkra/lazytest/raw/main/readme/rstudio-kb.png" alt="RStudio shortcut configuration"><figcaption aria-hidden="true">
+RStudio shortcut configuration
+</figcaption></figure>
 </div>
 <div class="section level2">
-<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>Please note that the lazytest project is released with a <a href="https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Let’s create a package with two boilerplate tests.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_seed.html" class="external-link">local_seed</a></span><span class="op">(</span><span class="fl">42</span><span class="op">)</span></span>
+<span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_options.html" class="external-link">local_options</a></span><span class="op">(</span>usethis.quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pkg_parent_dir</span> <span class="op">&lt;-</span> <span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_tempfile.html" class="external-link">local_tempdir</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">pkg_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pkg_parent_dir</span>, <span class="st">"tea"</span><span class="op">)</span></span>
+<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html" class="external-link">create_package</a></span><span class="op">(</span><span class="va">pkg_dir</span><span class="op">)</span></span>
+<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/proj_utils.html" class="external-link">with_project</a></span><span class="op">(</span>path <span class="op">=</span> <span class="va">pkg_dir</span>, <span class="op">{</span></span>
+<span>  <span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_testthat.html" class="external-link">use_testthat</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="op">(</span><span class="st">"blop"</span><span class="op">)</span></span>
+<span>  <span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_r.html" class="external-link">use_test</a></span><span class="op">(</span><span class="st">"blip"</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
+<p>If we run the tests, they all pass.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="op">(</span></span>
+<span>  <span class="va">pkg_dir</span>,</span>
+<span>  <span class="fu">lazytest</span><span class="fu">::</span><span class="fu"><a href="reference/lazytest_local.html">lazytest_local</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; ℹ Testing all tests.</span></span>
+<span><span class="co">#&gt; ✔ | F W  S  OK | Context</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ⠏ |          0 | blip                                                           </span></span>
+<span><span class="co">#&gt; ✔ |          1 | blip</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ⠏ |          0 | blop                                                           </span></span>
+<span><span class="co">#&gt; ✔ |          1 | blop</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="co">#&gt; [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]</span></span>
+<span><span class="co">#&gt; ✔ All tests passed.</span></span>
+<span><span class="co">#&gt; → Testing all tests next time.</span></span></code></pre></div>
+<p>Now if we replace one of the tests with a failing test,</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">brio</span><span class="fu">::</span><span class="fu"><a href="https://brio.r-lib.org/reference/write_lines.html" class="external-link">write_lines</a></span><span class="op">(</span></span>
+<span>  text <span class="op">=</span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">'test_that("blop() works", {'</span>,</span>
+<span>    <span class="st">'expect_equal(2 * 2, 42)'</span>,</span>
+<span>    <span class="st">'})'</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pkg_dir</span>, <span class="st">"tests"</span>, <span class="st">"testthat"</span>, <span class="st">"test-blop.R"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>and then run the tests,</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="op">(</span></span>
+<span>  <span class="va">pkg_dir</span>,</span>
+<span>  <span class="fu">lazytest</span><span class="fu">::</span><span class="fu"><a href="reference/lazytest_local.html">lazytest_local</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; ℹ Testing all tests.</span></span>
+<span><span class="co">#&gt; ✔ | F W  S  OK | Context</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ⠏ |          0 | blip                                                           </span></span>
+<span><span class="co">#&gt; ✔ |          1 | blip</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ⠏ |          0 | blop                                                           </span></span>
+<span><span class="co">#&gt; ⠋ | 1        0 | blop                                                           </span></span>
+<span><span class="co">#&gt; ✖ | 1        0 | blop</span></span>
+<span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
+<span><span class="co">#&gt;   `actual`:  4.0</span></span>
+<span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="co">#&gt; -- Failed tests ----------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
+<span><span class="co">#&gt;   `actual`:  4.0</span></span>
+<span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 1 ]</span></span>
+<span><span class="co">#&gt; → Testing the following tests next time:</span></span>
+<span><span class="co">#&gt; • blop</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Test failures</span></span></code></pre></div>
+<p>a file is created with the failing test name:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">brio</span><span class="fu">::</span><span class="fu"><a href="https://brio.r-lib.org/reference/read_lines.html" class="external-link">read_lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">pkg_dir</span>, <span class="st">".lazytest"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "blop"</span></span></code></pre></div>
+<p>Next time we run the tests, only this test will be run, until it is fixed at which point all tests are run again to check no failure has been introduced elsewhere.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_dir.html" class="external-link">with_dir</a></span><span class="op">(</span></span>
+<span>  <span class="va">pkg_dir</span>,</span>
+<span>  <span class="fu">lazytest</span><span class="fu">::</span><span class="fu"><a href="reference/lazytest_local.html">lazytest_local</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; ℹ Testing only tests that failed last time:</span></span>
+<span><span class="co">#&gt; • blop</span></span>
+<span><span class="co">#&gt; ✔ | F W  S  OK | Context</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ⠏ |          0 | blop                                                           </span></span>
+<span><span class="co">#&gt; ✖ | 1        0 | blop</span></span>
+<span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
+<span><span class="co">#&gt;   `actual`:  4.0</span></span>
+<span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; --------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ══ Results ═════════════════════════════════════════════════════════════════════</span></span>
+<span><span class="co">#&gt; -- Failed tests ----------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Failure ('test-blop.R:2:1'): blop() works</span></span>
+<span><span class="co">#&gt; Expected `2 * 2` to equal 42.</span></span>
+<span><span class="co">#&gt; Differences:</span></span>
+<span><span class="co">#&gt;   `actual`:  4.0</span></span>
+<span><span class="co">#&gt; `expected`: 42.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; [ FAIL 1 | WARN 0 | SKIP 0 | PASS 0 ]</span></span>
+<span><span class="co">#&gt; → Repeating the same tests next time.</span></span>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! Test failures</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="how-does-it-work">How does it work?<a class="anchor" aria-label="anchor" href="#how-does-it-work"></a>
+</h2>
+<p><code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code> returns an object from which the tests that have failed can be retrieved. <code><a href="reference/lazytest_local.html">lazytest_local()</a></code> wraps this function. If tests have failed, a file named <code>.lazytest</code> is written in the package directory. In the next call, if <code>.lazytest</code> exists, it is consulted, and a suitable <code>filter</code> argument is constructed and passed to <code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code>.</p>
+<p>When all tests have passed and not all tests were run, a second call to <code><a href="https://testthat.r-lib.org/reference/test_package.html" class="external-link">testthat::test_local()</a></code> is initiated, to make sure that no failures have been introduced in the meantime.</p>
+<p>The presence of a <code>.lazytest</code> file in the package source indicates that the last test run has failed somewhere. You should not need to gitignore or Rbuildignore it: you should fix the reason behind the test failure, then run tests again, before committing to your repository’s default branch for instance.</p>
+</div>
+<div class="section level2">
+<h2 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+</h2>
+<p>If you encounter a clear bug, please file an issue with a minimal reproducible example on <a href="https://github.com/cynkra/lazytest/issues" class="external-link">GitHub</a>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
