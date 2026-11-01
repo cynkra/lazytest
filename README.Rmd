@@ -1,21 +1,23 @@
 ---
-output: downlit::readme_document
+output: cynkratemplate::readme_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md and index.md are generated from README.Rmd.
+     Edit that file and render it the usual way: rmarkdown::render(), devtools::build_readme(), or the Knit button.
+     The cynkratemplate package must be installed; it supplies the output format. -->
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 
 pkgload::load_all()
 ```
 
-
-# lazytest
+# [lazytest](https://lazytest.cynkra.com/)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/cynkra/lazytest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/cynkra/lazytest/actions/workflows/R-CMD-check.yaml)
@@ -35,6 +37,29 @@ It integrates tightly with the testthat package and provides the `lazytest_local
 
 If all active tests have succeeded, the entire test suite is run in a second pass.
 
+## Installation
+
+The development version of lazytest can be installed from R-universe:
+
+```r
+# Enable repository from cynkra
+options(
+  repos = c(
+    cynkra = "https://cynkra.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"
+  )
+)
+# Download and install lazytest in R
+install.packages("lazytest")
+```
+
+or from GitHub:
+
+```r
+# install.packages("pak")
+pak::pak("cynkra/lazytest")
+```
+
 ## Usage
 
 Call `lazytest_local()` instead of `testthat::test_local()` or `devtools::test()`:
@@ -45,6 +70,17 @@ lazytest::lazytest_local()
 
 The package also provides RStudio add-ins that run the tests in a new terminal.
 Unfortunately, the "Test package" command is hard-wired to `devtools::test()`, and there seems to be no way to customize it or hook into it.
+
+If you're using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T).
+The add-in provides two commands:
+
+- Run Lazy Tests in New Terminal (recommended mapping: Ctrl + Shift + T / Cmd + Shift + T)
+
+- Reset And Run Lazy Tests in New Terminal (recommended mapping: Ctrl + T / Cmd + T)
+
+This allows you to keep the workflows you're accustomed to and to benefit immediately.
+
+![RStudio shortcut configuration](https://github.com/cynkra/lazytest/raw/main/readme/rstudio-kb.png)
 
 ## Example
 
@@ -64,33 +100,17 @@ When all tests have passed and not all tests were run, a second call to `testtha
 The presence of a `.lazytest` file in the package source indicates that the last test run has failed somewhere.
 You should not need to gitignore or Rbuildignore it: you should fix the reason behind the test failure, then run tests again, before committing to your repository's default branch for instance.
 
-## Installation and optional setup
+## Getting help
 
-You can install the development version of lazytest from [cynkra R-universe](https://cynkra.r-universe.dev/):
-
-``` r
-install.packages('lazytest', repos = c('https://cynkra.r-universe.dev', 'https://cloud.r-project.org'))
-```
-
-Or from GitHub:
-
-``` r
-pak::pak("krlmlr/lazytest")
-```
-
-If you're using RStudio, it is a good idea to remap the shortcut for running tests (default: Ctrl + Shift + T / Cmd + Shift + T).
-The add-in provides two commands:
-
-- Run Lazy Tests in New Terminal (recommended mapping: Ctrl + Shift + T / Cmd + Shift + T)
-
-- Reset And Run Lazy Tests in New Terminal (recommended mapping: Ctrl + T / Cmd + T)
-
-This allows you to keep the workflows you're accustomed to and to benefit immediately.
-
-![RStudio shortcut configuration](https://github.com/cynkra/lazytest/raw/main/readme/rstudio-kb.png)
+If you encounter a clear bug, please file an issue with a minimal reproducible example on [GitHub](https://github.com/cynkra/lazytest/issues).
 
 ---
 
-## Code of Conduct
+License: MIT © lazytest authors.
 
-Please note that the lazytest project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Funded by [cynkra](https://www.cynkra.com/).
+
+---
+
+Please note that the lazytest project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
