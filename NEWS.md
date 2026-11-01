@@ -1,5 +1,20 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9106 (2026-11-01)
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/cynkra/lazytest/actions/runs/41333114561
+
+- Drop the local favicon copy, the template ships it (#70).
+
+## Documentation
+
+- Align the README with dm (#71).
+
+
 # lazytest 0.0.0.9105 (2026-10-10)
 
 ## Chore
