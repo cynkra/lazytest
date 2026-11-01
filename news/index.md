@@ -1,5 +1,24 @@
 # Changelog
 
+## lazytest 0.0.0.9105 (2026-10-10)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/38014208749>
+
+## lazytest 0.0.0.9104 (2026-09-27)
+
+### Continuous integration
+
+- Run coverage checks after pkgdown push.
+
+### Uncategorized
+
+- Feat(ci): Render `README.md` and `index.md` in CI
+  (cynkra/cynkratemplate#118).
+
 ## lazytest 0.0.0.9103 (2026-09-26)
 
 - Refactor(ci): Serve the revdep scripts with the actions instead of
