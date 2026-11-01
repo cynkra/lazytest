@@ -99,6 +99,15 @@ withr::with_dir(
   lazytest::lazytest_local()
 )
 #> ℹ Testing all tests.
+#> ✔ | F W  S  OK | Context
+#> 
+#> ⠏ |          0 | blip                                                           
+#> ✔ |          1 | blip
+#> 
+#> ⠏ |          0 | blop                                                           
+#> ✔ |          1 | blop
+#> 
+#> ══ Results ═════════════════════════════════════════════════════════════════════
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
 #> ✔ All tests passed.
 #> → Testing all tests next time.
@@ -125,7 +134,26 @@ withr::with_dir(
   lazytest::lazytest_local()
 )
 #> ℹ Testing all tests.
-#> FAILURE: 'test-blop.R:2:1' ------------------------
+#> ✔ | F W  S  OK | Context
+#> 
+#> ⠏ |          0 | blip                                                           
+#> ✔ |          1 | blip
+#> 
+#> ⠏ |          0 | blop                                                           
+#> ⠋ | 1        0 | blop                                                           
+#> ✖ | 1        0 | blop
+#> --------------------------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> Expected `2 * 2` to equal 42.
+#> Differences:
+#>   `actual`:  4.0
+#> `expected`: 42.0
+#> 
+#> --------------------------------------------------------------------------------
+#> 
+#> ══ Results ═════════════════════════════════════════════════════════════════════
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
 #> Expected `2 * 2` to equal 42.
 #> Differences:
 #>   `actual`:  4.0
@@ -155,7 +183,22 @@ withr::with_dir(
 )
 #> ℹ Testing only tests that failed last time:
 #> • blop
-#> FAILURE: 'test-blop.R:2:1' ------------------------
+#> ✔ | F W  S  OK | Context
+#> 
+#> ⠏ |          0 | blop                                                           
+#> ✖ | 1        0 | blop
+#> --------------------------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
+#> Expected `2 * 2` to equal 42.
+#> Differences:
+#>   `actual`:  4.0
+#> `expected`: 42.0
+#> 
+#> --------------------------------------------------------------------------------
+#> 
+#> ══ Results ═════════════════════════════════════════════════════════════════════
+#> -- Failed tests ----------------------------------------------------------------
+#> Failure ('test-blop.R:2:1'): blop() works
 #> Expected `2 * 2` to equal 42.
 #> Differences:
 #>   `actual`:  4.0
