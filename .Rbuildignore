@@ -11,3 +11,4 @@
 ^\.aviator/config\.yml$
 ^air\.toml$
 ^\.ccache$
+^index\.md$
