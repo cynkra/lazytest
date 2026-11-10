@@ -1,5 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# lazytest 0.0.0.9108 (2026-11-10)
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/cynkra/lazytest/actions/runs/42734348542
+
+
 # lazytest 0.0.0.9107 (2026-11-09)
 
 ## Chore
