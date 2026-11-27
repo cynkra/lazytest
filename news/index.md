@@ -1,5 +1,18 @@
 # Changelog
 
+## lazytest 0.0.0.9109 (2026-11-27)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/45921624154>
+
+### Continuous integration
+
+- Sync the workflows with cynkra/cynkratemplate
+  ([\#72](https://github.com/cynkra/lazytest/issues/72)).
+
 ## lazytest 0.0.0.9108 (2026-11-10)
 
 ### Chore
