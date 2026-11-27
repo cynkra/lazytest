@@ -1,5 +1,37 @@
 # Changelog
 
+## lazytest 0.0.0.9108 (2026-11-10)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/42734348542>
+
+## lazytest 0.0.0.9107 (2026-11-09)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/42544682970>
+
+## lazytest 0.0.0.9106 (2026-11-01)
+
+### Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: <https://github.com/cynkra/lazytest/actions/runs/41333114561>
+
+- Drop the local favicon copy, the template ships it
+  ([\#70](https://github.com/cynkra/lazytest/issues/70)).
+
+### Documentation
+
+- Align the README with dm
+  ([\#71](https://github.com/cynkra/lazytest/issues/71)).
+
 ## lazytest 0.0.0.9105 (2026-10-10)
 
 ### Chore

@@ -26,5 +26,5 @@ Authors:
 
 Other contributors:
 
-- cynkra GmbH <mail@cynkra.com> ([ROR](https://ror.org/0335t7e62))
-  \[funder, copyright holder\]
+- cynkra GmbH <mail@cynkra.com> (ROR: 0335t7e62,
+  `https://ror.org/0335t7e62`) \[funder, copyright holder\]
